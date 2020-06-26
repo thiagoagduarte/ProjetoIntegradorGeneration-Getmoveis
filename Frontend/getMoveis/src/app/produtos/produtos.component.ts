@@ -22,7 +22,6 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    location.assign;
     this.pesquisarPorNome();
 
     localStorage.setItem('nome', "a");
@@ -71,6 +70,7 @@ export class ProdutosComponent implements OnInit {
     this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
       this.produto = resp
     })
+    alert("Produto adicionado ao carrinho")
   }
 }
 

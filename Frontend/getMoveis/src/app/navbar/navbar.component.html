@@ -64,7 +64,16 @@
                         </div>
                     </li>
                 </div>
-
+                <div *ngIf='authService.btnLoginFuncionario()'>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mt-2" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Funcionario</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item cortexto" (click)='CadastroEAlteracaoDeProdutos()'>Edição de
+                                Produtos</a>
+                        </div>
+                    </li>
+                </div>
                 <li class="nav-item">
                     <a class="nav-item btn ml-md-2 mt-2 cortexto" routerLink='carrinho'>
                         <fa-icon [icon]="faShoppingCart" class="faShoppingCart fa-1x"></fa-icon>
