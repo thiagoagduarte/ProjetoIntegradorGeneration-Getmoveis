@@ -20,11 +20,9 @@ public class Produto {
 	@Size(min =2, max = 100)
 	private String nome;
 
-	@NotNull
 	@Size(min =2, max = 300)
 	private String modelo;
 	
-	@NotNull
 	@Size(min =2, max = 100)
 	private String cor;
 	
@@ -35,7 +33,6 @@ public class Produto {
 	@Size(min=0, max=255)
 	private String descricaoProduto;
 	
-	@NotNull
 	@Size(min =2, max = 100)
 	private String categoria;
 	
