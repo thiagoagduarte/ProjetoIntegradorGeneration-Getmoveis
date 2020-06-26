@@ -1,0 +1,61 @@
+/* -------AQUI INICIA O FOOTER------*/
+
+/* CONFIGURAÇÃO CAIXA FOOTER DA SEÇÃO*/
+
+/* FIM DA CONFIGURAÇÃO CAIXA FOOTER DAS SEÇÃO*/
+
+/* SEÇÃO  GET MÓVEIS | PRODUTOS | CONTATOS */
+
+.linhaHorizontal{
+    border-top: 0.1px solid #ced4da;
+    background-color: rgb(248, 249, 250);
+    margin-top: 140px;
+}
+.linhaVertical{
+    border-right: 0.1px solid #ced4da;
+    background-color: rgb(248, 249, 250);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.linhaVertical:hover{
+    color: white;
+    background-color:  #915b4a;
+}
+
+.corFundo{
+    background-color: rgb(248, 249, 250);
+    border-top: #000000 2px solid;
+}
+
+.liCorProdutos{
+    color: #4f2c14;
+}
+
+/* FIM DA SEÇÃO  GET MÓVEIS | PRODUTOS | CONTATOS */
+
+/* CONFIGURAÇÃO DA BARRA REDE SOCIAL + DADOS + ICONES DE PAGAMENTO. */
+
+.rodapeFooter{
+    color: white;
+    background-color: black;
+}
+
+/*  FIM CONFIGURAÇÃO DA BARRA REDE SOCIAL + DADOS + ICONES DE PAGAMENTO. */
+
+/* ICONES DAS REDES SOCIAIS */
+
+#twitterFooter, #instagramFooter, #facebookFooter, #linkedinFooter{
+    float: left;
+}
+
+.faFacebook, .faInstagram, .faTwitter, .faLinkedin{
+    color: white;
+}
+
+.faFacebook:hover, .faInstagram:hover, .faTwitter:hover, .faLinkedin:hover{
+    color: #4f2c14;
+}
+
+/* FIM DOS ICONES */
+/* ---------FIM DO FOOTER---------- */

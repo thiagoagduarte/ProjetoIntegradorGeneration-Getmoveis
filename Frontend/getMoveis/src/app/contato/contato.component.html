@@ -1,0 +1,177 @@
+<div class="container">
+
+
+  <section class="my-5">
+
+    <h2 class="h1-responsive font-weight-bold text-center mx-auto py-5"></h2>
+    <!-- <h2 class="h1-responsive font-weight-bold text-center mx-auto pt-2 pb-5">Fale com a Getmóveis!</h2> -->
+
+    <div class="row">
+
+      <div class="col-lg-5 mb-lg-0 mb-4">
+
+        <div class="card">
+          <div class="card-body headerdoformulario">
+            <!-- Header do Formulário -->
+            <div class="form-header">
+              <h3 class="mt-2">
+                <fa-icon [icon]="faEnvelope"></fa-icon> Entre em Contato
+              </h3>
+            </div>
+            <p>Preencha o formulário Abaixo:</p>
+            <!-- Corpo do Formulário -->
+            <div class="form-group">
+              <label for="#">Nome</label>
+              <input type="name" class="form-control" id="nome" placeholder="Insira seu nome" required autofocus>
+
+            </div>
+            <div class="form-group">
+              <label for="#">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="nome@example.com" required>
+
+            </div>
+            <div class="form-group">
+              <label for="#">Assunto</label>
+              <select class="form-control" id="opcao" required>
+                <option value="1" disabled selected>Escolha sua opção</option>
+                <option value="2">Quero Doar</option>
+                <option value="3">Sugestões</option>
+                <option value="4">Duvidas na compra</option>
+                <option value="5">Outras informações</option>
+              </select>
+
+            </div>
+            <div class="md-form">
+              <label for="form-text">Mensagem</label>
+              <i class="fas fa-pencil-alt prefix grey-text"></i>
+              <textarea class="form-control" id="message" rows="3" placeholder="Como podemos ajudar?"></textarea>
+
+            </div>
+            <div class="text-center mt-4">
+              <button class="btn btn-light btn-outline-dark" type="submit" name="sbt" value="Enviar"
+                id="btnEnviar">ENVIAR</button>
+            </div>
+          </div>
+        </div>
+        <!-- Fim do Formulário -->
+
+      </div>
+
+      <div class="col-lg-7">
+
+        <!--Mapa do Google -->
+        <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1241452609834!2d-46.69399738502288!3d-23.528036884699503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8775663b04f%3A0x923835e9005f8309!2sSenac%20Lapa%20Tito!5e0!3m2!1spt-BR!2sbr!4v1592535000543!5m2!1spt-BR!2sbr"
+            frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <!-- Botoes-->
+        <div class="row text-center">
+          <div class="col-md-4">
+            <a class="">
+              <fa-icon [icon]="faMapMarkerAlt" class="faMapMakerAlt fa-2x"></fa-icon>
+            </a>
+            <p>Rua Tito, 54</p>
+            <p class="mb-md-0">São Paulo</p>
+          </div>
+          <div class="col-md-4">
+            <a>
+              <fa-icon [icon]="faPhone" class="faPhone fa-2x"></fa-icon>
+            </a>
+            <p>(11) 1234-5678</p>
+            <p class="mb-md-0">Seg - Sex, 8:00-18:00</p>
+          </div>
+          <div class="col-md-4">
+            <a>
+              <fa-icon [icon]="faEnvelope" class="faEnvelope fa-2x"></fa-icon>
+            </a>
+            <p>doacaogetmoveis@gmail.com</p>
+            <p class="mb-0">vendagetmoveis@gmail.com</p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div id="contato">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nome</label>
+                <input type="name" class="form-control" id="nome" placeholder="Insira seu nome" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">E-mail para contato</label>
+                <input type="email" class="form-control" id="email" placeholder="nome@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Assunto do Contato</label>
+                <select class="form-control" id="opcao" required>
+                    <option value="1" disabled selected>Escolha sua opção</option>
+                    <option value="2">Quero Doar</option>
+                    <option value="3">Sugestões</option>
+                    <option value="4">Duvidas na compra</option>
+                    <option value="5">Outras informações</option>
+                </select>
+            </div>
+
+            <label for="exampleFormControlTextarea1">Mensagem</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="Como podemos ajudar?"></textarea>
+            <label>
+                <br>
+                <input class="btn btn-outline-dark" type="submit" name="sbt" value="Enviar" id="btnEnviar" /></label>
+
+            <br>
+            <hr>
+            <br>
+            <div class="formsobre row mt-5 mb-5 ">
+                <div class="col-md-6 d-flex justify-content-start">
+                     <input style="width: 100%; display: flex;"class="form-control" type="text" placeholder="Sobre" readonly> -->
+  <!-- <div id="sobre" class="border border-dark" style="padding: 5px 15px 5px 15px; ">
+                        <p><strong> Getmóveis Ltda</strong></p>
+                        <p><strong>E-mail</strong>:getmoveis6@gmail.com</p>
+                        <p><strong>Endereço</strong>: Rua Tito, nº54, São Paulo-SP</p>
+                        <p><strong>CEP</strong>:05051-000</p>
+                        <p><strong>Telefone</strong>:(11-99999-9999)</p>
+                        <p><strong>Horário de atendimento</strong>: 09h - 17h</p>
+                    </div>
+                </div>
+
+                <div class="mapa col-md-6 p-0">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.124145260984!2d-46.693997385121534!3d-23.528036884699482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8775663b04f%3A0x923835e9005f8309!2sSenac%20Lapa%20Tito!5e0!3m2!1spt-PT!2sbr!4v1583929873676!5m2!1spt-PT!2sbr"
+                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"
+                        class="w-100 h-100"></iframe>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="row my-5"></div> -->
+
+</div>

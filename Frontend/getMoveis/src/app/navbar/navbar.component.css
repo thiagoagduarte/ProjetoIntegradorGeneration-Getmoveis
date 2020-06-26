@@ -1,0 +1,64 @@
+
+.topbar {
+    background-image: linear-gradient(to left, #2f2f2f, #000000);
+    text-align: center;
+}
+
+#logoicon {
+    max-width: 12rem;
+
+}
+
+.cortexto{
+    font-family: Hind Madurai,Arial,sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+ /* Estilo do Modal */
+    
+ .container{
+    background-color: #F2F2F2;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.modal-header{
+    border-bottom: 0px;
+
+}
+
+.modal-content input,
+.modal-content button {
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+}
+
+.modal-content input{
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    margin-bottom: 10px;
+}
+
+.modal-content input:focus{
+    border-bottom-color: #915b4a;
+}
+
+.BotaoEnviar{
+    background-color: #915b4a;
+    color: #FFF;
+}
+
+.BotaoEnviar:hover{
+    background-color: #963e04;
+}
+
+/* Fim do Modal */
