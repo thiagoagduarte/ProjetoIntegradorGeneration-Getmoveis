@@ -140,16 +140,22 @@ public habilitaForm(): void {
 
 }
 
+
+
 public confirmarCompra(): void {
 
   this.pedido.endereco = this.endereco
   this.pedido.numero = this.numero
   this.pedido.complemento = this.complemento
   this.pedido.formaPagamento = this.formaPagamento
+
+  this.ordemCompraService.efetivarCompra(this.pedido).subscribe(pedido =>{this.idPedidoCompra=pedido.id})
   
 }
 
 public pedido: Pedido = new Pedido('','','','')
+
+
 
 }
 

@@ -2,6 +2,7 @@ import {Pedido} from '../service/pedido.model'
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from'@angular/common/http'
 import { Observable} from 'rxjs'
+import { catchError } from 'rxjs/operators'
 
 @Injectable()
 export class OrdemCompraService {
@@ -14,10 +15,13 @@ export class OrdemCompraService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
       }
       
-
-    public efetivarCompra(pedido:Pedido): Observable<any> {
-        return this.httpClient.post<Pedido>(this.url, JSON.stringify(pedido), 
+      
+      
+    public efetivarCompra(pedido:Pedido): Observable<Pedido> {
+        const response = this.httpClient.post<Pedido>(this.url,pedido, 
         this.httpOptions)
+        return response
+        
     } 
     
 }
