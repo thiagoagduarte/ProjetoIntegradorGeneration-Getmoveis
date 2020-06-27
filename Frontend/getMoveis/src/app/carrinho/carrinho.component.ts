@@ -1,20 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
   styleUrls: ['./carrinho.component.css']
 })
+
+
 export class CarrinhoComponent implements OnInit {
+
 
   listaProdutos: Produto[]
 
   produto: Produto = new Produto
 
   carrinho: string = localStorage.getItem('usuario')
+
+  //Template Form com view Child
+  @ViewChild('formulario') public formulario: NgForm
+  //controlar botão confirmar compra
 
   constructor(private produtoService: ProdutoService, public router: Router) { }
 
@@ -28,6 +36,19 @@ export class CarrinhoComponent implements OnInit {
 
 
   }
+
+  // Validações 
+
+  public confirmarCompra(): void {
+    console.log(this.formulario)
+  }
+
+  //total do carrinho
+
+  
+
+ 
+
 
   pesquisarPorCarrinho() {
     this.produtoService.GetByCarrinho(this.carrinho).subscribe((resp: Produto[]) => {
