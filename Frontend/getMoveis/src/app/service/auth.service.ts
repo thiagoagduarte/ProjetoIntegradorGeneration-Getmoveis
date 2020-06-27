@@ -48,4 +48,14 @@ export class AuthService {
     return ok;
   }
 
+  btnLogoutFuncionario() {
+    let ok = false;
+    let tipo = localStorage.getItem('tipo');
+
+    if (tipo != "admin") {
+      ok = true;
+    }
+    return ok;
+  }
+
 }

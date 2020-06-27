@@ -27,11 +27,11 @@ export class ProdutosComponent implements OnInit {
     localStorage.setItem('nome', "a");
   }
 
-  findallProdutos() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-      this.listaProdutos = resp
-    })
-  }
+  // findallProdutos() {
+  //   this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+  //     this.listaProdutos = resp
+  //   })
+  // }
 
   pesquisarPorNome() {
     this.produtoService.GetByNome(this.nome).subscribe((resp: Produto[]) => {

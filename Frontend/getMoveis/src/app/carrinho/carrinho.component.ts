@@ -25,6 +25,11 @@ export class CarrinhoComponent implements OnInit {
       alert('Login necessário');
       this.router.navigate(['/home'])
     }
+    let tipo = localStorage.getItem('tipo');
+    if (tipo == "admin") {
+      alert('Funcionários não tem acesso a função carrinho');
+      this.router.navigate(['/home'])
+    }
 
 
   }
