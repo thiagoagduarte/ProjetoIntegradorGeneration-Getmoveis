@@ -17,7 +17,8 @@ import { EditarComponent } from './editar/editar.component';
 import { DeletarComponent } from './deletar/deletar.component';
 import { SofasComponent } from './sofas/sofas.component';
 import { ProdutosComponent } from './produtos/produtos.component';
-import { CarrinhoComponent } from './carrinho/carrinho.component'
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component'
     DeletarComponent,
     SofasComponent,
     ProdutosComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,

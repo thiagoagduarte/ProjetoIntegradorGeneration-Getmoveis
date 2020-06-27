@@ -1,86 +1,79 @@
 <div class="container">
-    <div class="ordem-compra">
-            <!-- Varialvel de template com diretiva ng form -->
-      <form novalidate #formulario="ngForm" ngSubmit="confirmarCompra(formulario)">
-      
-        <h5>Sua Compra</h5>
-        <hr />
-  
-        <div class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0" *ngFor="let produto of listaProdutos">
-          <div class="form-group col-sm-1">
-            <img src="{{produto.imagem}}" class="img-fluid">
-          </div>
-          <div class="form-group col-sm-6">
-            {{produto.nome}}
-            <br />
-            Senta ae no sofá papai
-          </div>
-  
-          <div>
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-link">-</button>
-                {{produto.qtdEstoque}}
-                <button type="button" class="btn btn-link">+</button>
-              </div>
+  <div class="ordem-compra">
+    <form novalidate>
+    
+      <h5>Sua Compra</h5>
+      <hr />
+
+      <div class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0" *ngFor="let produto of listaProdutos">
+        <div class="form-group col-sm-1">
+          <img src="{{produto.imagem}}" class="img-fluid">
+        </div>
+        <div class="form-group col-sm-6">
+          {{produto.nome}}
+          <br />
+          Senta ae no sofá papai
+        </div>
+
+        <div>
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-link">-</button>
+              {{produto.qtdEstoque}}
+              <button type="button" class="btn btn-link">+</button>
             </div>
-          </div>
-  
-          <div class="form-group col-sm-3 d-flex justify-content-end">
-            {{produto.qtdEstoque * produto.valor | currency: 'BRL': true }}
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group col d-flex justify-content-end">
-            <h4>Total do pedido:{{ produto.codigoDoProduto +  produto.valor }} </h4>
-          </div>
+        <div class="form-group col-sm-3 d-flex justify-content-end">
+          {{produto.valor}}
         </div>
-        
-        <h5>Dados de entrega</h5>
-        <hr />
-  
-        <div class="form-row">
-  
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="Endereço" autocomplete="off" minlength="5" maxlength="80" required ngModel name="endereco"  #inputEndereco="ngModel">
-            <small *ngIf="inputEndereco.valid" class="form-text text-success">Endereço válido</small>
-            <small *ngIf="!inputEndereco.valid && inputEndereco.touched" class="form-text text-danger">Endereço inválido</small>
-            
-          </div>
-  
-          <div class="form-group col-md-2">
-            <input type="text" class="form-control" placeholder="Número" autocomplete="off" minlength="1" required name="numero" ngModel  #inputNumero="ngModel">
-            <small *ngIf="inputNumero.valid && inputNumero.touched" class="form-text text-success">ok</small>
-            <small *ngIf="!inputNumero.valid && inputNumero.touched" class="form-text text-danger">inválido</small>
-          </div>
+      </div>
+      
+      <h5>Dados de entrega</h5>
+      <hr />
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+                                  <!-- teste ternário verifica qual classe css vai ser aplicada -->
+          <input type="text" class="form-control {{ enderecoEstadoPrimitivo ? '' : (enderecoValido ? 'is-valid' : 'is-invalid') }} " placeholder="Endereço" autocomplete="off" minlength="5" required [value]="endereco" #inputEndereco (input)="atualizaEndereco(inputEndereco.value)">
+          <div class="invalid-feedback">Endereço inválido</div>
+        </div>
+
+        <div class="form-group col-md-2">
+          <input type="text" class="form-control {{ numeroEstadoPrimitivo ? '' : (numeroValido ? 'is-valid' : 'is-invalid') }}" placeholder="Número" autocomplete="off" minlength="1" required [value]="numero" #inputNumero (input)="atualizaNumero(inputNumero.value)">
+        </div>
+
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control {{ complementoValido ? 'is-valid' : '' }}" placeholder="Complemento" autocomplete="off" [value]="complemento" #inputComplemento (input)="atualizaComplemento(inputComplemento.value)">
+        </div>
+
+      </div>
+      <br />
+
+      <h5>Dados de pagamento</h5>
+      <hr />
+
+      <div class="form-row">
           
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control" placeholder="Complemento" autocomplete="off" name="complemento" ngModel>
-          </div>
-  
+        <div class="form-group col-md-3">
+          <select class="custom-select {{ formaPagamentoEstadoPrimitivo ? '' : (formaPagamentoValido ? 'is-valid' : 'is-invalid') }} " #selectFormaPagamento (change)="atualizaFormaPagamento(selectFormaPagamento.value)">
+            <option value=''>Selecione uma opção</option>
+            <option value='dinheiro' selected="{{ formaPagamento == 'dinheiro' ? 'selected' : '' }}">Dinheiro</option>
+            <option value='debito' selected="{{ formaPagamento == 'debito' ? 'selected' : '' }}">Débito</option>
+            <option value='credito' selected="{{ formaPagamento == 'credito' ? 'selected' : '' }}">Crédito</option>
+          </select>
+
+          <div class="invalid-feedback">Selecione uma forma de pagamento</div>
         </div>
-        <br />
-  
-        <h5>Dados de pagamento</h5>
-        <hr />
-  
-        <div class="form-row">
-            
-          <div class="form-group col-md-3">
-            <select class="custom-select" required name="formaPagamento" ngModel #selectFormaPagamento="ngModel">
-              <option value="">Selecione uma opção</option>
-              <option value="dinheiro">Dinheiro</option>
-              <option value="debito">Débito</option>
-              <option value="credito">Crédito</option>
-            </select>
-            <small *ngIf="selectFormaPagamento.valid && selectFormaPagamento.touched" class="form-text text-success">Forma de Pagamento Válida</small>
-            <small *ngIf="!selectFormaPagamento.valid && selectFormaPagamento.touched" class="form-text text-danger">Forma de Pagamento Inválida</small>
-          </div>
-        </div>
-  
-        <hr />
-        <button type="submit" class="btn btn-primary btn-lg"  [disabled]="!selectFormaPagamento.valid || !inputEndereco.valid || !inputNumero.valid">Cofirmar compra</button>
-      </form>
-    </div>
+      </div>
+
+      <hr />
+      <button type="button" class="btn btn-primary btn-lg" [disabled]="formEstado" (click)="confirmarCompra()">Cofirmar compra</button>
+    </form>
   </div>
+  <div class="ordem-compra" *ngif="idPedidoCompra !== undefined">
+      <app-ordem-compra-sucesso [idPedidoCompra]=idPedidoCompra></app-ordem-compra-sucesso>
+  </div>
+</div>
