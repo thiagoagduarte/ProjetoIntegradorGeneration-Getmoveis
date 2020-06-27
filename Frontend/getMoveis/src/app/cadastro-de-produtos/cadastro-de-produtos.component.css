@@ -2,10 +2,6 @@
     padding-top: 50px;
     color: #434444;
 }
-hr{
-	width: 300px;
-	border: 3px solid #434444;
-}
 
 a{
 	cursor: pointer;
@@ -22,6 +18,7 @@ a{
 .imagem{
 	position: relative;
 }
+
 .overlay{
 	position: absolute;
 	top: 0;
@@ -57,6 +54,19 @@ a{
 }
 .comprar:hover{
 	background-color: #434444;
+	color: #fff;
+}
+
+.deletar{
+	background-color: transparent;
+	color: #c01818;
+	border-radius: 0;
+	border: 1px solid #c01818;
+	width: 100%;
+	margin-top: 20px;
+}
+.deletar:hover{
+	background-color: #c01818;
 	color: #fff;
 }
 

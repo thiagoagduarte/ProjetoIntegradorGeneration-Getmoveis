@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-produtos',
@@ -18,7 +20,7 @@ export class ProdutosComponent implements OnInit {
 
   nome: string = localStorage.getItem('nome')
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(private produtoService: ProdutoService, public router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
 
@@ -72,5 +74,6 @@ export class ProdutosComponent implements OnInit {
     })
     alert("Produto adicionado ao carrinho")
   }
+
 }
 

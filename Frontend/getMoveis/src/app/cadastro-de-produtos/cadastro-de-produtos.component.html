@@ -1,80 +1,80 @@
 <div class="container">
 
     <div class="row mt-5 mb-5">
-
         <div class="col-md-12">
-
-            <div>
-                <h3 class="text-center mb-4 text-monospace">CADASTRAR OU ALTERAR UM PRODUTO</h3>
-                <div class="col-md-12">
-                    <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid">
-                        <div class="imagem">
-                            <a>
-                                <img src="{{produto.imagem}}" class="w-100">
-                                <div class="overlay" type="button" data-toggle="modal"
-                                    data-target="#exampleModalCenter">
-                                    <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">
-                                        Detalhes
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <h5 class="text-center">{{produto.nome}}</h5>
-                        <h5 class="text-center">{{produto.valor}}</h5>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="titulo" class="text-monospace">NOME</label>
-                        <input type="text" id="nome" class="form-control" placeholder="Digite o nome"
-                            [(ngModel)]="produto.nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="titulo" class="text-monospace">PREÇO</label>
-                        <input type="number" id="nome" class="form-control" placeholder="Digite o Preço"
-                            [(ngModel)]="produto.valor">
-                    </div>
-                    <div class=" form-group">
-                        <label for="titulo" class="text-monospace">IMAGEM</label>
-                        <input type="text" id="nome" class="form-control" placeholder="Digite a URL da imagem"
-                            [(ngModel)]="produto.imagem">
-                    </div>
-                    <div class="form-group">
-                        <label for="titulo" class="text-monospace">QUANTIDADE EM ESTOQUE</label>
-                        <input type="number" id="nome" class="form-control" placeholder="Digite a quantidade em estoque"
-                            [(ngModel)]="produto.qtdEstoque">
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-outline-info w-25" (click)="salvar()">Salvar</button>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-
-        </div>
-    </div>
-    <div class="row m-0">
-        <div class="col-md-12 text-center">
-            <h3 class="text-center mb-4 text-monospace">TODOS OS PRODUTOS</h3>
+            <h3 class="text-center mb-4 text-monospace">CADASTRAR OU ALTERAR UM PRODUTO</h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-9 d-flex flex-wrap">
-            <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid" *ngFor="let produto of listaProdutos">
+        <div class="col-3 col-md-3 mr-3 ml-3 p-3 produto-grid">
+            <h5 class="text-center mb-4 text-monospace">PRÉVIA</h5>
+            <div class="imagem">
+                <a>
+                    <img src="{{produto.imagem}}" class="w-100">
+                    <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                        <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">
+                            Detalhes
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <h5 class="text-center">{{produto.nome}}</h5>
+            <h5 class="text-center">{{produto.valor}}</h5>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">NOME</label>
+                <input type="text" id="nome" class="form-control" placeholder="Digite o nome"
+                    [(ngModel)]="produto.nome">
+            </div>
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">PREÇO</label>
+                <input type="number" id="nome" class="form-control" placeholder="Digite o Preço"
+                    [(ngModel)]="produto.valor">
+            </div>
+            <div class=" form-group">
+                <label for="titulo" class="text-monospace">IMAGEM</label>
+                <input type="text" id="nome" class="form-control" placeholder="Digite a URL da imagem"
+                    [(ngModel)]="produto.imagem">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-outline-info w-25" (click)="salvar()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="col">
+            <hr>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row m-0">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center mb-4 mt-5 text-monospace">TODOS OS PRODUTOS</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 d-flex flex-wrap justify-content-center">
+            <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid align-self-center"
+                *ngFor="let produto of listaProdutos">
                 <div class="imagem">
                     <a>
-                        <img src="{{produto.imagem}}" class="w-100">
+                        <img src="{{produto.imagem}}" class="img-card w-100">
                         <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                            <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">Detalhes
+                            <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">Selecionar e
+                                Ver detalhes
                             </div>
                         </div>
                     </a>
                 </div>
                 <h5 class="text-center">{{produto.nome}}</h5>
                 <h5 class="text-center">Preço: R$ {{produto.valor}}</h5>
-
+                <a class="btn comprar text-center" (click)="editarByCodigoDoProduto(produto.codigoDoProduto)">EDITAR</a>
+                <button type="button" class="btn text-center deletar"
+                    (click)="deletar(produto.codigoDoProduto)">REMOVER</button>
             </div>
         </div>
 

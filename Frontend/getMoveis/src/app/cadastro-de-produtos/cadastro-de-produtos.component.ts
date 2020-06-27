@@ -32,6 +32,11 @@ export class CadastroDeProdutosComponent implements OnInit {
       this.produto = resp
       alert("Produto cadastrado!")
       location.assign('/cadastrodeprodutos');
+    }, err => {
+      alert('Houve um erro ao cadastrar o produto, verifique os atributos inseridos');
+      // alert(`Usuario: ${this.userLogin.usuario}`);
+      // alert(`Senha: ${this.userLogin.senha}`);
+      // alert(`Tipo: ${this.userLogin.tipo}`);
     })
   }
 
@@ -41,10 +46,24 @@ export class CadastroDeProdutosComponent implements OnInit {
     })
   }
 
+  editarByCodigoDoProduto(codigoDoProduto: number) {
+    this.produtoService.GetById(codigoDoProduto).subscribe((resp: Produto) => {
+      this.produto = resp
+    })
+    window.scroll(0, 0);
+  }
+
   findallProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
     })
+  }
+
+  deletar(codigoDoProduto: number) {
+    this.produtoService.delete(codigoDoProduto).subscribe(() => {
+
+    })
+    location.assign('/cadastrodeprodutos');
   }
 
 }
