@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-produtos',
@@ -18,21 +20,20 @@ export class ProdutosComponent implements OnInit {
 
   nome: string = localStorage.getItem('nome')
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(private produtoService: ProdutoService, public router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
 
-    location.assign;
     this.pesquisarPorNome();
 
     localStorage.setItem('nome', "a");
   }
 
-  findallProdutos() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-      this.listaProdutos = resp
-    })
-  }
+  // findallProdutos() {
+  //   this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+  //     this.listaProdutos = resp
+  //   })
+  // }
 
   pesquisarPorNome() {
     this.produtoService.GetByNome(this.nome).subscribe((resp: Produto[]) => {
@@ -71,6 +72,8 @@ export class ProdutosComponent implements OnInit {
     this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
       this.produto = resp
     })
+    alert("Produto adicionado ao carrinho")
   }
+
 }
 

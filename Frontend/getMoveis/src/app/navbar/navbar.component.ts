@@ -42,19 +42,29 @@ export class NavbarComponent implements OnInit {
       this.userLogin = resp;
       localStorage.setItem('token', this.userLogin.token);
       localStorage.setItem('usuario', this.userLogin.usuario);
+      localStorage.setItem('tipo', this.userLogin.tipo);
       this.router.navigate(['home']);
       location.assign('/home');
       alert('Você está logado');
+      // alert(`Usuario: ${this.userLogin.usuario}`);
+      // alert(`Senha: ${this.userLogin.senha}`);
+      // alert(`Tipo: ${this.userLogin.tipo}`);
     }, err => {
       alert('Houve um erro ao logar, verifique o usuário e a senha');
-      alert(`Usuario: ${this.userLogin.usuario}`);
-      alert(`Senha: ${this.userLogin.senha}`);
+      // alert(`Usuario: ${this.userLogin.usuario}`);
+      // alert(`Senha: ${this.userLogin.senha}`);
+      // alert(`Tipo: ${this.userLogin.tipo}`);
     });
   }
 
   sair() {
     this.router.navigate(['/home']);
     localStorage.clear();
+  }
+
+  CadastroEAlteracaoDeProdutos() {
+    // alert(`tipo: ${this.userLogin.tipo}`)
+    this.router.navigate(['/cadastrodeprodutos']);
   }
 
   buscaSofas() {

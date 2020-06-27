@@ -59,11 +59,6 @@ public class UsuarioController {
 		return ResponseEntity.ok(repositoryUsuario.findAllByNomeClienteContainingIgnoreCase(nomeCliente));
 	}
 	
-	@GetMapping("/tipo/{tipo}")
-	public ResponseEntity<List<Usuario>> GetByTipo(@PathVariable String tipo){
-		return ResponseEntity.ok(repositoryUsuario.findAllByTipoContainingIgnoreCase(tipo));
-	}
-	
 	@PostMapping
 	public ResponseEntity<Usuario> post (@RequestBody Usuario usuario){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryUsuario.save(usuario));
