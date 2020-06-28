@@ -61,4 +61,9 @@ public class ProdutoController {
 		repository.deleteById(codigoDoProduto);
 	}
 	
+	@DeleteMapping("/deletar/carrinho/{carrinho}")
+	public void deleteCarrinho(@PathVariable String carrinho) {
+		repository.deleteAllByCarrinhoContainingIgnoreCase(carrinho);
+	}
+	
 }
