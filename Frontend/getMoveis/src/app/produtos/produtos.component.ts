@@ -20,6 +20,8 @@ export class ProdutosComponent implements OnInit {
 
   nome: string = localStorage.getItem('nome')
 
+  totalcarrinho: number = parseFloat(localStorage.getItem('totalcarrinho'))
+
   constructor(private produtoService: ProdutoService, public router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
@@ -71,8 +73,13 @@ export class ProdutosComponent implements OnInit {
     produto.carrinho = localStorage.getItem('usuario')
     this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
       this.produto = resp
+
     })
     alert("Produto adicionado ao carrinho")
+    this.totalcarrinho = this.totalcarrinho + produto.valor
+    var totalcarrinhoString = (this.totalcarrinho).toString();
+    localStorage.setItem('totalcarrinho', totalcarrinhoString)
+    alert(`valor total: ${totalcarrinhoString}`)
   }
 
 }

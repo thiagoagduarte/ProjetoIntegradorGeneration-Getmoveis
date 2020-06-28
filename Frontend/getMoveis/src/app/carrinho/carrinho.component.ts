@@ -9,7 +9,7 @@ import { Pedido } from '../service/pedido.model';
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
   styleUrls: ['./carrinho.component.css'],
-  providers: [ OrdemCompraService]
+  providers: [OrdemCompraService]
 })
 
 
@@ -21,6 +21,10 @@ export class CarrinhoComponent implements OnInit {
   produto: Produto = new Produto
 
   carrinho: string = localStorage.getItem('usuario')
+
+  valortotalcarrinhoString: string = localStorage.getItem('totalcarrinho')
+
+  totalcarrinho: number = parseFloat(localStorage.getItem('totalcarrinho'))
 
   //Botoes do formulario de dados :
 
@@ -46,7 +50,7 @@ export class CarrinhoComponent implements OnInit {
   //controlar botão confirmar compra
   public formEstado: string = 'disabled'
 
-  constructor(private produtoService: ProdutoService, public router: Router, 
+  constructor(private produtoService: ProdutoService, public router: Router,
     private ordemCompraService: OrdemCompraService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -74,11 +78,16 @@ export class CarrinhoComponent implements OnInit {
   }
 
   Remover(produto: Produto) {
+    this.totalcarrinho = this.totalcarrinho - produto.valor
+    var totalcarrinhoString = (this.totalcarrinho).toString();
+    localStorage.setItem('totalcarrinho', totalcarrinhoString)
+    alert(`valor total: ${totalcarrinhoString}`)
     produto.carrinho = null
     this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
       this.produto = resp
     })
     location.assign('carrinho')
+
   }
 
   findByCodigoDoProduto(codigoDoProduto: number) {
@@ -88,77 +97,77 @@ export class CarrinhoComponent implements OnInit {
     })
   }
 
-// Controle dos formulários de envio:
+  // Controle dos formulários de envio:
 
-public atualizaEndereco(endereco:string):void {
-  this.endereco = endereco
+  public atualizaEndereco(endereco: string): void {
+    this.endereco = endereco
 
-  this.enderecoEstadoPrimitivo = false
+    this.enderecoEstadoPrimitivo = false
 
-  if (this.endereco.length > 3){
-    this.enderecoValido = true
-  }else {
-    this.enderecoValido = false
+    if (this.endereco.length > 3) {
+      this.enderecoValido = true
+    } else {
+      this.enderecoValido = false
+    }
+    this.habilitaForm()
   }
-  this.habilitaForm()
-}
 
-public atualizaNumero(numero:string):void {
-  this.numero = numero
+  public atualizaNumero(numero: string): void {
+    this.numero = numero
 
-  this.numeroEstadoPrimitivo = false
+    this.numeroEstadoPrimitivo = false
 
-  if (this.numero.length > 0){
-    this.numeroValido = true
-  }else {
-    this.numeroValido = false
+    if (this.numero.length > 0) {
+      this.numeroValido = true
+    } else {
+      this.numeroValido = false
+    }
+    this.habilitaForm()
   }
-  this.habilitaForm()
-}
 
-public atualizaComplemento(complemento:string):void {
-  this.complemento = complemento
-  if (this.complemento.length > 0){
-    this.complementoValido = true
+  public atualizaComplemento(complemento: string): void {
+    this.complemento = complemento
+    if (this.complemento.length > 0) {
+      this.complementoValido = true
+    }
   }
-}
 
-public atualizaFormaPagamento(formaPagamento:string):void {
-  this.formaPagamento = formaPagamento
+  public atualizaFormaPagamento(formaPagamento: string): void {
+    this.formaPagamento = formaPagamento
 
-  this.formaPagamentoEstadoPrimitivo = false
+    this.formaPagamentoEstadoPrimitivo = false
 
-  if (this.formaPagamento.length > 0){
-    this.formaPagamentoValido = true
-  }else {
-    this.formaPagamentoValido = false
+    if (this.formaPagamento.length > 0) {
+      this.formaPagamentoValido = true
+    } else {
+      this.formaPagamentoValido = false
+    }
+    this.habilitaForm()
   }
-  this.habilitaForm()
-}
 
-public habilitaForm(): void {
-   if (this.enderecoValido ===true && this.numeroValido ===true && this.formaPagamentoValido ===true){
-     this.formEstado = ''
-   }else {
-     this.formEstado = 'disabled'
-   }
+  public habilitaForm(): void {
+    if (this.enderecoValido === true && this.numeroValido === true && this.formaPagamentoValido === true) {
+      this.formEstado = ''
+    } else {
+      this.formEstado = 'disabled'
+    }
 
-}
+  }
 
 
 
-public confirmarCompra(): void {
+  public confirmarCompra(): void {
 
-  this.pedido.endereco = this.endereco
-  this.pedido.numero = this.numero
-  this.pedido.complemento = this.complemento
-  this.pedido.formaPagamento = this.formaPagamento
+    this.pedido.endereco = this.endereco
+    this.pedido.numero = this.numero
+    this.pedido.complemento = this.complemento
+    this.pedido.formaPagamento = this.formaPagamento
 
-  this.ordemCompraService.efetivarCompra(this.pedido).subscribe(pedido =>{this.idPedidoCompra=pedido.id})
-  
-}
+    this.ordemCompraService.efetivarCompra(this.pedido).subscribe(pedido => { this.idPedidoCompra = pedido.id })
 
-public pedido: Pedido = new Pedido('','','','')
+  }
+
+  public pedido: Pedido = new Pedido('', '', '', '')
 
 
 

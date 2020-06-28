@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-ordem-compra-sucesso',
@@ -7,11 +9,35 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class OrdemCompraSucessoComponent implements OnInit {
 
-  @Input() public idPedidoCompra:number
+  listaProdutos: Produto[]
 
-  constructor() { }
+  produto: Produto = new Produto
+
+  carrinho: string = localStorage.getItem('usuario')
+
+  valortotalcarrinhoString: string = localStorage.getItem('totalcarrinho')
+
+  @Input() public idPedidoCompra: number
+
+  constructor(private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
+    this.pesquisarPorCarrinho()
+  }
+
+  pesquisarPorCarrinho() {
+    this.produtoService.GetByCarrinho(this.carrinho).subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+    })
+  }
+
+  FinalizarCompra() {
+    this.produtoService.GetByCarrinho(this.carrinho).subscribe((resp: Produto[]) => {
+      this.produtoService.delete(this.produto.codigoDoProduto).subscribe(() => {
+
+      })
+    })
+    location.assign('/ordemcompra');
   }
 
 }

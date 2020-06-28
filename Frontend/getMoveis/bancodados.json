@@ -1,191 +1,200 @@
 {
-<<<<<<< HEAD
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-=======
   "pedidos": [
     {
-      "endereco": "Luciva",
-      "numero": "1",
-      "complemento": "5",
-      "formaPagamento": "dinheiro",
+      "endereco": "asas",
+      "numero": "sa",
+      "complemento": "sa",
+      "formaPagamento": "credito",
       "id": 1
     },
     {
-      "endereco": "Luciva",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "tois",
+      "numero": "51",
+      "complemento": "",
       "formaPagamento": "dinheiro",
       "id": 2
     },
     {
-      "endereco": "rua 55",
-      "numero": "1",
-      "complemento": "1",
-      "formaPagamento": "debito",
+      "endereco": "sasa",
+      "numero": "sa",
+      "complemento": "sa",
+      "formaPagamento": "dinheiro",
       "id": 3
     },
     {
-      "endereco": "fsfdgdfs",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "sasa",
+      "numero": "sas",
+      "complemento": "sas",
       "formaPagamento": "dinheiro",
       "id": 4
     },
     {
-      "endereco": "Rua 5",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "asas",
+      "numero": "sa",
+      "complemento": "sa",
       "formaPagamento": "dinheiro",
-      "idPedidoCompra": "",
       "id": 5
     },
     {
-      "endereco": "rua 55",
-      "numero": "1",
-      "complemento": "2",
+      "endereco": "asas",
+      "numero": "sas",
+      "complemento": "sas",
       "formaPagamento": "dinheiro",
-      "idPedidoCompra": "",
       "id": 6
     },
     {
-      "endereco": "rua 55",
-      "numero": "1",
-      "complemento": "2",
+      "endereco": "asass",
+      "numero": "sas",
+      "complemento": "sas",
       "formaPagamento": "dinheiro",
-      "idPedidoCompra": "",
       "id": 7
     },
     {
-      "endereco": "rua 55",
-      "numero": "1",
-      "complemento": "2",
+      "endereco": "sasas",
+      "numero": "sas",
+      "complemento": "asa",
       "formaPagamento": "dinheiro",
-      "idPedidoCompra": "",
       "id": 8
     },
     {
-      "endereco": "fsfdgdfs",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "sassa",
+      "numero": "sasa",
+      "complemento": "sasa",
       "formaPagamento": "dinheiro",
       "id": 9
     },
     {
-      "endereco": "fsfdgdfs",
-      "numero": "1",
-      "complemento": "5",
-      "formaPagamento": "dinheiro",
+      "endereco": "sasa",
+      "numero": "sasa",
+      "complemento": "sasa",
+      "formaPagamento": "credito",
       "id": 10
     },
     {
-      "endereco": "rua 5",
-      "numero": "1",
-      "complemento": "1",
+      "endereco": "sasas",
+      "numero": "sasa",
+      "complemento": "sasa",
       "formaPagamento": "dinheiro",
-      "idPedidoCompra": "",
       "id": 11
     },
     {
-      "endereco": "rua 5",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "sasas",
+      "numero": "sas",
+      "complemento": "sas",
       "formaPagamento": "dinheiro",
-      "idPedidoCompra": "",
       "id": 12
     },
     {
-      "endereco": "rua 55",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "asasa",
+      "numero": "sas",
+      "complemento": "sas",
       "formaPagamento": "dinheiro",
       "id": 13
     },
     {
-      "endereco": "Rua 5",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "SASAS",
+      "numero": "SASA",
+      "complemento": "SAS",
       "formaPagamento": "dinheiro",
       "id": 14
     },
     {
-      "endereco": "Rua 5",
-      "numero": "1",
-      "complemento": "5",
+      "endereco": "asaas",
+      "numero": "sasa",
+      "complemento": "sas",
       "formaPagamento": "dinheiro",
       "id": 15
     },
     {
-      "endereco": "Rua 5",
-      "numero": "1",
-      "complemento": "1",
+      "endereco": "sasas",
+      "numero": "sasa",
+      "complemento": "sasa",
       "formaPagamento": "dinheiro",
       "id": 16
     },
     {
-      "endereco": "rasaas",
-      "numero": "2",
-      "complemento": "dcas",
-      "formaPagamento": "debito",
+      "endereco": "saasa",
+      "numero": "sasa",
+      "complemento": "sas",
+      "formaPagamento": "dinheiro",
       "id": 17
     },
     {
-      "endereco": "rua 2",
-      "numero": "2",
-      "complemento": "2",
-      "formaPagamento": "debito",
+      "endereco": "sasa",
+      "numero": "sasa",
+      "complemento": "sasa",
+      "formaPagamento": "dinheiro",
       "id": 18
     },
     {
-      "endereco": "rua 2",
-      "numero": "2",
-      "complemento": "2",
-      "formaPagamento": "debito",
+      "endereco": "sasas",
+      "numero": "sasa",
+      "complemento": "sas",
+      "formaPagamento": "dinheiro",
       "id": 19
     },
     {
-      "endereco": "dfsdfd",
-      "numero": "2",
-      "complemento": "2",
-      "formaPagamento": "debito",
+      "endereco": "sasas",
+      "numero": "sas",
+      "complemento": "sas",
+      "formaPagamento": "dinheiro",
       "id": 20
     },
     {
-      "endereco": "dfsdfd",
-      "numero": "2",
-      "complemento": "2",
-      "formaPagamento": "debito",
+      "endereco": "sasas",
+      "numero": "sas",
+      "complemento": "sas",
+      "formaPagamento": "dinheiro",
       "id": 21
     },
     {
-      "endereco": "fafaf",
-      "numero": "2",
-      "complemento": "2",
-      "formaPagamento": "debito",
+      "endereco": "sasa",
+      "numero": "sas",
+      "complemento": "sas",
+      "formaPagamento": "dinheiro",
       "id": 22
     },
     {
-      "endereco": "rua 2",
-      "numero": "2",
-      "complemento": "2",
-      "formaPagamento": "debito",
+      "endereco": "sasasa",
+      "numero": "sas",
+      "complemento": "sasa",
+      "formaPagamento": "dinheiro",
       "id": 23
+    },
+    {
+      "endereco": "asasas",
+      "numero": "sas",
+      "complemento": "sasa",
+      "formaPagamento": "dinheiro",
+      "id": 24
+    },
+    {
+      "endereco": "sasa",
+      "numero": "sas",
+      "complemento": "sas",
+      "formaPagamento": "dinheiro",
+      "id": 25
+    },
+    {
+      "endereco": "SASAS",
+      "numero": "SAS",
+      "complemento": "SAS",
+      "formaPagamento": "dinheiro",
+      "id": 26
+    },
+    {
+      "endereco": "SASAS",
+      "numero": "SAS",
+      "complemento": "SAS",
+      "formaPagamento": "dinheiro",
+      "id": 27
+    },
+    {
+      "endereco": "sassa",
+      "numero": "sas",
+      "complemento": "sa",
+      "formaPagamento": "dinheiro",
+      "id": 28
     }
   ]
->>>>>>> 6a3a11716a4ad09403def936d086f5ff62e67b74
 }

@@ -36,5 +36,9 @@ export class ProdutoService {
     return this.http.delete(`http://localhost:8080/produtos/${codigoDoProduto}`)
   }
 
+  deleteCarrinho(carrinho: string) {
+    return this.http.delete(`http://localhost:8080/deletar/carrinho/${carrinho}`)
+  }
+
 }
 
