@@ -65,14 +65,11 @@
                     </li>
                 </div>
                 <div *ngIf='authService.btnLoginFuncionario()'>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mt-2" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Funcionário</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item cortexto" (click)='CadastroEAlteracaoDeProdutos()'>Edição de
-                                Produtos</a>
-                        </div>
-                    </li>
+
+                    <div class="btn btn-outline-dark mt-2" id="navbarDropdown" role="button"
+                        (click)='CadastroEAlteracaoDeProdutos()'>Admin</div>
+
+
                 </div>
                 <div *ngIf='authService.btnLogoutFuncionario()'>
                     <li class="nav-item">
