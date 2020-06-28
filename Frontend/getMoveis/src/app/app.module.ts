@@ -18,7 +18,8 @@ import { DeletarComponent } from './deletar/deletar.component';
 import { SofasComponent } from './sofas/sofas.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
-import { CadastroDeProdutosComponent } from './cadastro-de-produtos/cadastro-de-produtos.component'
+import { CadastroDeProdutosComponent } from './cadastro-de-produtos/cadastro-de-produtos.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CadastroDeProdutosComponent } from './cadastro-de-produtos/cadastro-de-
     SofasComponent,
     ProdutosComponent,
     CarrinhoComponent,
-    CadastroDeProdutosComponent
+    CadastroDeProdutosComponent,
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,

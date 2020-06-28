@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
-import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms'
+import { Router, ActivatedRoute } from '@angular/router';
+import { OrdemCompraService } from '../service/ordem-compra.service'
+import { Pedido } from '../service/pedido.model';
 
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
-  styleUrls: ['./carrinho.component.css']
+  styleUrls: ['./carrinho.component.css'],
+  providers: [ OrdemCompraService]
 })
 
 
@@ -20,11 +22,32 @@ export class CarrinhoComponent implements OnInit {
 
   carrinho: string = localStorage.getItem('usuario')
 
-  //Template Form com view Child
-  @ViewChild('formulario') public formulario: NgForm
-  //controlar botão confirmar compra
+  //Botoes do formulario de dados :
 
-  constructor(private produtoService: ProdutoService, public router: Router) { }
+  public idPedidoCompra: number
+
+  public endereco: string = ''
+  public numero: string = ''
+  public complemento: string = ''
+  public formaPagamento: string = ''
+
+  //controles de validação dos campos
+
+  public enderecoValido: boolean
+  public numeroValido: boolean
+  public complementoValido: boolean
+  public formaPagamentoValido: boolean
+
+  //estados primitivos dos campos
+  public enderecoEstadoPrimitivo: boolean = true
+  public numeroEstadoPrimitivo: boolean = true
+  public formaPagamentoEstadoPrimitivo: boolean = true
+
+  //controlar botão confirmar compra
+  public formEstado: string = 'disabled'
+
+  constructor(private produtoService: ProdutoService, public router: Router, 
+    private ordemCompraService: OrdemCompraService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.pesquisarPorCarrinho()
@@ -39,21 +62,10 @@ export class CarrinhoComponent implements OnInit {
       this.router.navigate(['/home'])
     }
 
+    //Variavel para pegar o id
+
 
   }
-
-  // Validações 
-
-  public confirmarCompra(): void {
-    console.log(this.formulario)
-  }
-
-  //total do carrinho
-
-  
-
- 
-
 
   pesquisarPorCarrinho() {
     this.produtoService.GetByCarrinho(this.carrinho).subscribe((resp: Produto[]) => {
@@ -72,7 +84,86 @@ export class CarrinhoComponent implements OnInit {
   findByCodigoDoProduto(codigoDoProduto: number) {
     this.produtoService.GetById(codigoDoProduto).subscribe((resp: Produto) => {
       this.produto = resp
+      console.log(codigoDoProduto)
     })
   }
 
+// Controle dos formulários de envio:
+
+public atualizaEndereco(endereco:string):void {
+  this.endereco = endereco
+
+  this.enderecoEstadoPrimitivo = false
+
+  if (this.endereco.length > 3){
+    this.enderecoValido = true
+  }else {
+    this.enderecoValido = false
+  }
+  this.habilitaForm()
 }
+
+public atualizaNumero(numero:string):void {
+  this.numero = numero
+
+  this.numeroEstadoPrimitivo = false
+
+  if (this.numero.length > 0){
+    this.numeroValido = true
+  }else {
+    this.numeroValido = false
+  }
+  this.habilitaForm()
+}
+
+public atualizaComplemento(complemento:string):void {
+  this.complemento = complemento
+  if (this.complemento.length > 0){
+    this.complementoValido = true
+  }
+}
+
+public atualizaFormaPagamento(formaPagamento:string):void {
+  this.formaPagamento = formaPagamento
+
+  this.formaPagamentoEstadoPrimitivo = false
+
+  if (this.formaPagamento.length > 0){
+    this.formaPagamentoValido = true
+  }else {
+    this.formaPagamentoValido = false
+  }
+  this.habilitaForm()
+}
+
+public habilitaForm(): void {
+   if (this.enderecoValido ===true && this.numeroValido ===true && this.formaPagamentoValido ===true){
+     this.formEstado = ''
+   }else {
+     this.formEstado = 'disabled'
+   }
+
+}
+
+
+
+public confirmarCompra(): void {
+
+  this.pedido.endereco = this.endereco
+  this.pedido.numero = this.numero
+  this.pedido.complemento = this.complemento
+  this.pedido.formaPagamento = this.formaPagamento
+
+  this.ordemCompraService.efetivarCompra(this.pedido).subscribe(pedido =>{this.idPedidoCompra=pedido.id})
+  
+}
+
+public pedido: Pedido = new Pedido('','','','')
+
+
+
+}
+
+
+
+

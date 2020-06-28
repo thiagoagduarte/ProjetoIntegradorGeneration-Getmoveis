@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "posts": [
     {
       "id": 1,
@@ -16,4 +17,175 @@
   "profile": {
     "name": "typicode"
   }
+=======
+  "pedidos": [
+    {
+      "endereco": "Luciva",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 1
+    },
+    {
+      "endereco": "Luciva",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 2
+    },
+    {
+      "endereco": "rua 55",
+      "numero": "1",
+      "complemento": "1",
+      "formaPagamento": "debito",
+      "id": 3
+    },
+    {
+      "endereco": "fsfdgdfs",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 4
+    },
+    {
+      "endereco": "Rua 5",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "idPedidoCompra": "",
+      "id": 5
+    },
+    {
+      "endereco": "rua 55",
+      "numero": "1",
+      "complemento": "2",
+      "formaPagamento": "dinheiro",
+      "idPedidoCompra": "",
+      "id": 6
+    },
+    {
+      "endereco": "rua 55",
+      "numero": "1",
+      "complemento": "2",
+      "formaPagamento": "dinheiro",
+      "idPedidoCompra": "",
+      "id": 7
+    },
+    {
+      "endereco": "rua 55",
+      "numero": "1",
+      "complemento": "2",
+      "formaPagamento": "dinheiro",
+      "idPedidoCompra": "",
+      "id": 8
+    },
+    {
+      "endereco": "fsfdgdfs",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 9
+    },
+    {
+      "endereco": "fsfdgdfs",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 10
+    },
+    {
+      "endereco": "rua 5",
+      "numero": "1",
+      "complemento": "1",
+      "formaPagamento": "dinheiro",
+      "idPedidoCompra": "",
+      "id": 11
+    },
+    {
+      "endereco": "rua 5",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "idPedidoCompra": "",
+      "id": 12
+    },
+    {
+      "endereco": "rua 55",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 13
+    },
+    {
+      "endereco": "Rua 5",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 14
+    },
+    {
+      "endereco": "Rua 5",
+      "numero": "1",
+      "complemento": "5",
+      "formaPagamento": "dinheiro",
+      "id": 15
+    },
+    {
+      "endereco": "Rua 5",
+      "numero": "1",
+      "complemento": "1",
+      "formaPagamento": "dinheiro",
+      "id": 16
+    },
+    {
+      "endereco": "rasaas",
+      "numero": "2",
+      "complemento": "dcas",
+      "formaPagamento": "debito",
+      "id": 17
+    },
+    {
+      "endereco": "rua 2",
+      "numero": "2",
+      "complemento": "2",
+      "formaPagamento": "debito",
+      "id": 18
+    },
+    {
+      "endereco": "rua 2",
+      "numero": "2",
+      "complemento": "2",
+      "formaPagamento": "debito",
+      "id": 19
+    },
+    {
+      "endereco": "dfsdfd",
+      "numero": "2",
+      "complemento": "2",
+      "formaPagamento": "debito",
+      "id": 20
+    },
+    {
+      "endereco": "dfsdfd",
+      "numero": "2",
+      "complemento": "2",
+      "formaPagamento": "debito",
+      "id": 21
+    },
+    {
+      "endereco": "fafaf",
+      "numero": "2",
+      "complemento": "2",
+      "formaPagamento": "debito",
+      "id": 22
+    },
+    {
+      "endereco": "rua 2",
+      "numero": "2",
+      "complemento": "2",
+      "formaPagamento": "debito",
+      "id": 23
+    }
+  ]
+>>>>>>> 6a3a11716a4ad09403def936d086f5ff62e67b74
 }
