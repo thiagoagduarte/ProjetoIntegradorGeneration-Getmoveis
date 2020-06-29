@@ -32,12 +32,13 @@ export class OrdemCompraSucessoComponent implements OnInit {
   }
 
   FinalizarCompra() {
-    this.produtoService.GetByCarrinho(this.carrinho).subscribe((resp: Produto[]) => {
-      this.produtoService.delete(this.produto.codigoDoProduto).subscribe(() => {
-
-      })
-    })
+    this.listaProdutos = []
     location.assign('/ordemcompra');
   }
 
+
 }
+
+
+
+
