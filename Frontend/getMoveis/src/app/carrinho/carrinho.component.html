@@ -2,60 +2,40 @@
   <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
     <form novalidate>
 
-      <h5>Sua Compra</h5>
-      <hr />
-
-      <div class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0"
-        *ngFor="let produto of listaProdutos">
-        <div class="form-group col-sm-1">
-          <img src="{{produto.imagem}}" class="img-fluid">
-        </div>
-        <div class="form-group col-sm-6">
-          {{produto.nome}}
-          <br />
-          Senta ae no sofá papai
-        </div>
-
-        <div>
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-link" (click)="Remover(produto)">TIRAR DO CARRINHO</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group col-sm-3 d-flex justify-content-end">
-          {{produto.valor}}
-        </div>
-      </div>
-
-      <div class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-        <div class="form-group col-sm-1">
-
-        </div>
-        <div class="form-group col-sm-6">
-          TOTAL
-          <br />
-
-        </div>
-
-        <div>
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-link"></button>
-
-              <button type="button" class="btn btn-link"></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group col-sm-3 d-flex justify-content-end">
-          R$ {{valortotalcarrinhoString}}
-        </div>
-      </div>
-
-
-
+      <div class="table-responsive-lg">
+        <h5>Sua Compra</h5>
+      <hr/>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="">Produto</th>
+            <th class="text-left">Valor</th>
+            <th class="text-left">Remover</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let produto of listaProdutos">
+          <tr>
+            <td>
+              <div class="media">
+                <img class="media-object thumbnail pull-left" src="{{produto.imagem}}" style="width: 72px; height: 72px;">
+                <div class="media-body">
+                  <h4 class="media-heading">{{produto.nome}}</h4>
+                  <span><strong>Informações: </strong></span><span>Resumo do produto</span>
+                </div>
+              </div></td>
+              <td><strong>{{produto.valor | currency: 'BRL': true }}</strong></td>
+              <td>
+                <button type="button" class="btn btn-link p-4 mt-2" (click)="Remover(produto)"><fa-icon [icon]="faTimesCircle"></fa-icon></button>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td class="text-right"><h5>Total:</h5></td>
+                <td class="text-left"><h5><strong>{{ 1999.5 | currency: 'BRL': true }}</strong></h5></td>
+              </tr>
+        </tbody>
+    </table>
+  </div>
 
       <h5 class="mt-5">Dados de entrega</h5>
       <hr />

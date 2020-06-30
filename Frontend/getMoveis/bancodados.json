@@ -195,6 +195,34 @@
       "complemento": "sa",
       "formaPagamento": "dinheiro",
       "id": 28
+    },
+    {
+      "endereco": "Rua 2",
+      "numero": "1",
+      "complemento": "casa 1",
+      "formaPagamento": "debito",
+      "id": 29
+    },
+    {
+      "endereco": "Rua 2",
+      "numero": "63",
+      "complemento": "",
+      "formaPagamento": "debito",
+      "id": 30
+    },
+    {
+      "endereco": "rua 2",
+      "numero": "63",
+      "complemento": "casa",
+      "formaPagamento": "debito",
+      "id": 31
+    },
+    {
+      "endereco": "Rua 2",
+      "numero": "63",
+      "complemento": "casa",
+      "formaPagamento": "debito",
+      "id": 32
     }
   ]
 }
