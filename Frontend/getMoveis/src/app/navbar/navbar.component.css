@@ -4,6 +4,10 @@
     text-align: center;
 }
 
+.tamanhoNavBar{
+    height: 4rem !important;
+}
+
 #logoicon {
     max-width: 12rem;
 

@@ -1,63 +1,62 @@
 <div class="container">
-    <div class="row" style="margin-top: 50px">
-        <div class="col d-flex justify-content-center">
-            <h3>Pedido realizado com sucesso!</h3>
-        </div>
+  <div class="row" style="margin-top: 50px">
+    <div class="col d-flex justify-content-center">
+      <h3>Pedido realizado com sucesso!</h3>
     </div>
+  </div>
 
-    <div class="row" style="margin-top: 50px">
-        <div class="col d-flex justify-content-center">
-            <p>O número do seu pedido é <b> {{idPedidoCompra}} </b></p>
-        </div>
+  <div class="row" style="margin-top: 50px">
+    <div class="col d-flex justify-content-center">
+      <p>O número do seu pedido é <b> {{idPedidoCompra}} </b></p>
     </div>
+  </div>
 
-    <div class="row" style="margin-top: 50px">
-        <div class="col d-flex justify-content-center">
-            <p>RESUMO DO PEDIDO<b></b></p>
-        </div>
+  <div class="table-responsive-lg">
+    <h5>Resumo do Pedido</h5>
+    <hr />
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="">Produto</th>
+          <th class="text-left">Valor</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let produto of listaProdutos">
+        <tr>
+          <td>
+            <div class="media">
+              <img class="media-object thumbnail pull-left" src="{{produto.imagem}}" style="width: 72px; height: 72px;">
+              <div class="media-body">
+                <h4 class="media-heading">{{produto.nome}}</h4>
+                <span><strong>Informações: </strong></span><span>Resumo do produto</span>
+              </div>
+            </div>
+          </td>
+          <td><strong>{{produto.valor | currency: 'BRL': true }}</strong></td>
+          <td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="text-right">
+            <h5>Total:</h5>
+          </td>
+          <td class="text-left">
+            <h5><strong>{{ getTotal() | currency: 'BRL': true }}</strong></h5>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4 d-flex justify-content-center mt-5">
+
+      <button type="button" class="btn btn-primary btn-lg" (click)="FinalizarCompra()"
+        [routerLink]="['/home']">Finalizar compra</button>
     </div>
-
-    <div class="row d-flex align-items-center"
-        style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0"
-        *ngFor="let produto of listaProdutos">
-
-        <div class="col-md-2">
-            <img src="{{produto.imagem}}" class="img-fluid">
-        </div>
-        <div class="col-md-3">
-            {{produto.nome}}
-            <br />
-            Senta ae no sofá papai
-        </div>
-
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-4 d-flex justify-content-center">
-
-            Valor: R$ {{produto.valor}}
-        </div>
-    </div>
-    <div class="mt-5">
-        <hr />
-    </div>
-    <div class="row font-weight-bold" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-        <div class="col-md-4 d-flex justify-content-center">VALOR TOTAL</div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4 d-flex justify-content-center">
-
-            R$ {{getTotal()}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4 d-flex justify-content-center mt-5">
-
-            <button [routerLink]="['/home']" type="button" class="btn btn-primary btn-lg"
-                (click)="FinalizarCompra()">Finalizar
-                compra</button>
-        </div>
-    </div>
+  </div>
 
 </div>

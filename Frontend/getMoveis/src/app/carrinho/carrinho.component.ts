@@ -4,6 +4,7 @@ import { Produto } from '../model/Produto';
 import { Router, ActivatedRoute } from '@angular/router';
 import { OrdemCompraService } from '../service/ordem-compra.service'
 import { Pedido } from '../service/pedido.model';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-carrinho',
@@ -14,6 +15,8 @@ import { Pedido } from '../service/pedido.model';
 
 
 export class CarrinhoComponent implements OnInit {
+
+  faTimesCircle = faTimesCircle
 
 
   listaProdutos: Produto[]
