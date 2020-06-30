@@ -1,4 +1,4 @@
-<footer class="container-fluid">
+<footer>
 
 
 
@@ -60,9 +60,9 @@
     <!-- Footer Gabriel -->
     <!-- Footer -->
 
-    <div id="footerGabriel">
-        <div class="text-center text-xs-center text-sm-left text-md-left d-flex container">
-            <div class="col-xs-12 col-sm-4 col-md-4">
+    <div id="footerGabriel" class="container">
+        <div class=" row text-center text-xs-center text-sm-left text-md-left d-flex">
+            <div class="col-md-4">
                 <h5>Saiba mais</h5>
                 <ul class="list-unstyled quick-links">
                     <li><a routerLink="/home" (click)="Subir()"><i class="fa fa-angle-double-right"></i>Home</a></li>
@@ -72,7 +72,7 @@
                     
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 ">
+            <div class="col-md-4 ">
                 <h5 class="text-center">Conecte-se</h5>
                      <div class="footer-redessociais">
                         <div class="p-2" id="facebookFooter">
@@ -106,9 +106,9 @@
                             </a>
                         </div>
                 </div>
-                <p class="text-center"><a routerLink="/home" class="footer-linkCPNJ" (click)="Subir()">GetMóveis</a> - CNPJ:00.000.000/0000-00</p>
+                
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 text-right">
+            <div id="formaPagamento" class="col-md-4 text-center">
                 <h5>Formas de pagamento</h5>
                 <ul class="list-unstyled quick-links">
                    
@@ -125,14 +125,25 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="row">
-            <div id="rodapeFinal" class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                <p class="h6">© Todos os direitos reservados.<a class="text-white ml-2" routerLink="/home" (click)="Subir()">GetMóveis</a></p>
+            <div id="footer-cnpj" class="col-md-12 mt-2 mt-sm-2 text-center">
+                <p class="text-center"><a routerLink="/home" (click)="Subir()">GetMóveis</a> - CNPJ:00.000.000/0000-00</p>
             </div>
             <hr>
         </div>
+        
+        
+        
+        
+        
 
+    </div>
+    <div class="row">
+        <div id="rodapeFinal" class="col-md-12 mt-2 mt-sm-2 text-center text-white">
+            <p class="h6">© Todos os direitos reservados.<a class="text-white ml-2" routerLink="/home" (click)="Subir()">GetMóveis</a></p>
+        </div>
+        <hr>
     </div>
 	
 	<!-- ./Footer -->

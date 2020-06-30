@@ -144,19 +144,20 @@
 footer{
     background-color: #E3E2E2;
 }
-@media (max-width:767px){
-	#footerGabriel h5 {
-    padding-left: 0;
-    border-left: transparent;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-}
-}
 
+#footer-cnpj a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 
 #rodapeFinal{
     background-color: #000000;
 }
+
+
+
+
 
 /* FIM DOS ICONES */
 /* ---------FIM DO FOOTER---------- */
