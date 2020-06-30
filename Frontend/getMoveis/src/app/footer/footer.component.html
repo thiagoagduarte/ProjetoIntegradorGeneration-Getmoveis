@@ -2,7 +2,7 @@
 
 
 
-
+<!-- 
     <div class="row d-flex d-inline linhaHorizontal corFundo footeritens">
 
         <div class="btn col col-sm-3 col-lg-4 text-center linhaVertical py-4">
@@ -54,7 +54,88 @@
             <fa-icon [icon]="faCcMastercard" class="faCcMastercard p-2" alt="Cartão Visa"></fa-icon>
             <fa-icon [icon]="faMoneyBillWaveAlt" class="faMoneyBillWaveAlt p-2" alt="Dinheiro"></fa-icon>
         </div>
+    </div> -->
+
+
+    <!-- Footer Gabriel -->
+    <!-- Footer -->
+
+    <div id="footerGabriel">
+        <div class="text-center text-xs-center text-sm-left text-md-left d-flex container">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Saiba mais</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a routerLink="/home" (click)="Subir()"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a routerLink="/sobrenos"><i class="fa fa-angle-double-right"></i>Sobre a GetMóveis</a></li>
+                    <li><a routerLink="/contato"><i class="fa fa-angle-double-right"></i>Contato</a></li>
+                    <li><a routerLink="/faq"><i class="fa fa-angle-double-right"></i>Duvidas Frequentes</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 ">
+                <h5 class="text-center">Conecte-se</h5>
+                     <div class="footer-redessociais">
+                        <div class="p-2" id="facebookFooter">
+                            <a href="http://facebook.com" >
+                                <div class="icon-footer ">
+                                    <fa-icon [icon]="faFacebook" class="faFacebook fa-2x p-2 "></fa-icon>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="p-2" id="instagramFooter">
+                            <a href="http://instagram.com">
+                                <div class="icon-footer ">
+                                    <fa-icon [icon]="faInstagram" class="faInstagram icon-footer fa-2x p-2"></fa-icon>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="p-2" id="twitterFooter">
+                            <a href="http://twitter.com">
+                                <div class="icon-footer ">
+                                    <div class="icon-footer ">
+                                        <fa-icon [icon]="faTwitter" class="faTwitter icon-footer fa-2x p-2"></fa-icon>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="p-2" id="linkedinFooter">
+                            <a href="https://br.linkedin.com">
+                                <div class="icon-footer ">
+                                    <fa-icon [icon]="faLinkedin" class="faLinkedin icon-footer fa-2x p-2"></fa-icon>
+                                </div>
+                            </a>
+                        </div>
+                </div>
+                <p class="text-center"><a routerLink="/home" class="footer-linkCPNJ" (click)="Subir()">GetMóveis</a> - CNPJ:00.000.000/0000-00</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 text-right">
+                <h5>Formas de pagamento</h5>
+                <ul class="list-unstyled quick-links">
+                   
+                        <fa-icon [icon]="faCcVisa" class="faCcVisa p-2" alt="Cartão Visa"></fa-icon>
+                        <fa-icon [icon]="faCcMastercard" class="faCcMastercard p-2" alt="Cartão Visa"></fa-icon>
+                        <fa-icon [icon]="faMoneyBillWaveAlt" class="faMoneyBillWaveAlt p-2" alt="Dinheiro"></fa-icon>
+                    <div class="footer-parcerias">
+                        <h5> Parcerias </h5>
+                        <div>
+                            <img src="../../assets/img/Footer/PrefeituraIcon.png" class="footer-ICON">
+                            <img src="../../assets/img/Footer/ecoIcon.png" class="footer-ICON">
+                        </div>
+                    </div>               
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div id="rodapeFinal" class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <p class="h6">© Todos os direitos reservados.<a class="text-white ml-2" routerLink="/home" (click)="Subir()">GetMóveis</a></p>
+            </div>
+            <hr>
+        </div>
+
     </div>
+	
+	<!-- ./Footer -->
 
 
 

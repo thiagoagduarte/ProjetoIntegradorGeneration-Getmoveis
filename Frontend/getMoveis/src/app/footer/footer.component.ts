@@ -41,4 +41,8 @@ faHome = faHome
   ngOnInit(): void {
   }
 
+  Subir(){
+    window.scrollTo(0,0);
+  }
+
 }
