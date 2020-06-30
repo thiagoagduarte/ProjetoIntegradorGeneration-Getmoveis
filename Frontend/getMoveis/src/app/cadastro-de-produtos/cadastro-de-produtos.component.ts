@@ -14,10 +14,15 @@ export class CadastroDeProdutosComponent implements OnInit {
 
   produto: Produto = new Produto
 
+  valortotal: number
+
+  alerta: boolean = false
+
   constructor(public router: Router, private produtoService: ProdutoService) { }
 
   ngOnInit() {
     let tipo = localStorage.getItem('tipo');
+    let codigoDoProduto = parseInt(localStorage.getItem('editarProduto'))
 
     if (tipo == null) {
       alert('área exclusiva para funcionários');
@@ -25,6 +30,8 @@ export class CadastroDeProdutosComponent implements OnInit {
     }
 
     this.findallProdutos();
+    this.editarByCodigoDoProduto(codigoDoProduto);
+    localStorage.removeItem('editarProduto')
   }
 
   salvar() {
@@ -64,6 +71,17 @@ export class CadastroDeProdutosComponent implements OnInit {
 
     })
     location.assign('/cadastrodeprodutos');
+  }
+
+  getTotal() {
+    let total = 0;
+    for (var i = 0; i < this.listaProdutos.length; i++) {
+      if (this.listaProdutos[i].valor) {
+        total += this.listaProdutos[i].valor;
+        this.valortotal = total;
+      }
+    }
+    return total;
   }
 
 }

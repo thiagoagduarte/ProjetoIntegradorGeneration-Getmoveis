@@ -119,7 +119,5 @@ public class Produto {
 	public void setCarrinho(String carrinho) {
 		this.carrinho = carrinho;
 	}
-	
-	
 		
 }

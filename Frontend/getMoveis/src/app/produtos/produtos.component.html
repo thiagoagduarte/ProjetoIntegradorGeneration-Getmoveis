@@ -33,6 +33,11 @@
             </div>
 
             <div class="col-md-9 d-flex flex-wrap justify-content-center">
+                <div *ngIf='getTotal() == 0'>
+                    <div class="alert alert-danger" role="alert">
+                        No momento estamos sem produtos para essa busca
+                    </div>
+                </div>
                 <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid" *ngFor="let produto of listaProdutos">
                     <div class="imagem">
                         <a>
@@ -50,7 +55,7 @@
                             AO CARRINHO</a>
                     </div>
                     <div *ngIf='authService.btnLoginFuncionario()'>
-                        <a class="btn comprar text-center">
+                        <a class="btn comprar text-center" (click)='EditarProduto(produto.codigoDoProduto)'>
                             EDITAR PRODUTO
                         </a>
                         <!-- <div class="btn btn-outline-dark mt-2" id="navbarDropdown" role="button"

@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	public List<Produto> findAllByNomeContainingIgnoreCase(String nome);
 	public List<Produto> findAllByCarrinhoContainingIgnoreCase(String carrinho);
-	public List<Produto> deleteAllByCarrinhoContainingIgnoreCase(String carrinho);
+	public List<Produto> deleteByCarrinho(String carrinho);
 }
 

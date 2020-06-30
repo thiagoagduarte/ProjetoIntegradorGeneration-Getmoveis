@@ -16,19 +16,26 @@ export class ProdutosComponent implements OnInit {
 
   produto: Produto = new Produto
 
+  valortotal: number
+
   usuario: string = localStorage.getItem('usuario')
 
   nome: string = localStorage.getItem('nome')
 
-  totalcarrinho: number = parseFloat(localStorage.getItem('totalcarrinho'))
+  codigoDoProdutoString: string
+
+  totalcarrinho: number = parseInt(localStorage.getItem('totalcarrinho'))
 
   constructor(private produtoService: ProdutoService, public router: Router, public authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     this.pesquisarPorNome();
 
     localStorage.setItem('nome', "a");
+    // if (localStorage.getItem('totalcarrinho') == null) {
+    //   localStorage.setItem('totalcarrinho', "0")
+    // }
   }
 
   // findallProdutos() {
@@ -75,11 +82,25 @@ export class ProdutosComponent implements OnInit {
       this.produto = resp
 
     })
-    alert("Produto adicionado ao carrinho")
-    this.totalcarrinho = this.totalcarrinho + produto.valor
-    var totalcarrinhoString = (this.totalcarrinho).toString();
-    localStorage.setItem('totalcarrinho', totalcarrinhoString)
-    alert(`valor total: ${totalcarrinhoString}`)
+    alert('Produto adicionado ao carrinho')
+  }
+
+  getTotal() {
+    let total = 0;
+    for (var i = 0; i < this.listaProdutos.length; i++) {
+      if (this.listaProdutos[i].valor) {
+        total += this.listaProdutos[i].valor;
+        this.valortotal = total;
+      }
+    }
+    return total;
+  }
+
+  EditarProduto(codigoDoProduto: number) {
+    this.codigoDoProdutoString = codigoDoProduto.toString()
+    localStorage.setItem('editarProduto', this.codigoDoProdutoString)
+    location.assign('/cadastrodeprodutos')
+    window.scroll(0, 0);
   }
 
 }

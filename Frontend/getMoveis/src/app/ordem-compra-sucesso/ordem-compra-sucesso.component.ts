@@ -13,15 +13,15 @@ export class OrdemCompraSucessoComponent implements OnInit {
 
   produto: Produto = new Produto
 
-  carrinho: string = localStorage.getItem('usuario')
+  valortotal: number
 
-  valortotalcarrinhoString: string = localStorage.getItem('totalcarrinho')
+  carrinho: string = localStorage.getItem('usuario')
 
   @Input() public idPedidoCompra: number
 
   constructor(private produtoService: ProdutoService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.pesquisarPorCarrinho()
   }
 
@@ -32,8 +32,21 @@ export class OrdemCompraSucessoComponent implements OnInit {
   }
 
   FinalizarCompra() {
-    this.listaProdutos = []
-    location.assign('/ordemcompra');
+    this.produtoService.deleteCarrinho(this.carrinho).subscribe(() => {
+
+    })
+    alert(`Obrigado por comprar com a GETMóveis!`)
+  }
+
+  getTotal() {
+    let total = 0;
+    for (var i = 0; i < this.listaProdutos.length; i++) {
+      if (this.listaProdutos[i].valor) {
+        total += this.listaProdutos[i].valor;
+        this.valortotal = total;
+      }
+    }
+    return total;
   }
 
 

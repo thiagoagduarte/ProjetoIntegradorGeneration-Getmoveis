@@ -20,6 +20,10 @@ export class CarrinhoComponent implements OnInit {
 
   produto: Produto = new Produto
 
+  valortotal: number
+
+  alerta: boolean = false
+
   carrinho: string = localStorage.getItem('usuario')
 
   valortotalcarrinhoString: string = localStorage.getItem('totalcarrinho')
@@ -65,10 +69,21 @@ export class CarrinhoComponent implements OnInit {
       alert('Funcionários não tem acesso a função carrinho');
       this.router.navigate(['/home'])
     }
+    if (this.valortotal === undefined) {
+      this.alerta = true
+    }
 
-    //Variavel para pegar o id
+  }
 
-
+  getTotal() {
+    let total = 0;
+    for (var i = 0; i < this.listaProdutos.length; i++) {
+      if (this.listaProdutos[i].valor) {
+        total += this.listaProdutos[i].valor;
+        this.valortotal = total;
+      }
+    }
+    return total;
   }
 
   pesquisarPorCarrinho() {
@@ -78,10 +93,6 @@ export class CarrinhoComponent implements OnInit {
   }
 
   Remover(produto: Produto) {
-    this.totalcarrinho = this.totalcarrinho - produto.valor
-    var totalcarrinhoString = (this.totalcarrinho).toString();
-    localStorage.setItem('totalcarrinho', totalcarrinhoString)
-    alert(`valor total: ${totalcarrinhoString}`)
     produto.carrinho = null
     this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
       this.produto = resp

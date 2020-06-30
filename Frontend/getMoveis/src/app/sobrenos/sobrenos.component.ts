@@ -13,7 +13,11 @@ export class SobrenosComponent implements OnInit {
     window.scroll(0, 0)
   }
 
-  sobrenosM:string ="assets/img/Sobrenos/MVV/missao.png"
-  sobrenosV:string ="assets/img/Sobrenos/MVV/visao.png"
-  sobrenosVl:string ="assets/img/Sobrenos/MVV/valores.png"
+  sobrenosM: string = "assets/img/Sobrenos/MVV/missao.png"
+  sobrenosV: string = "assets/img/Sobrenos/MVV/visao.png"
+  sobrenosVl: string = "assets/img/Sobrenos/MVV/valores.png"
+
+  fundadorGabriel: string = "assets/img/Fundadores/GabrielFernando.jpeg"
+  fundadorThiago: string = "assets/img/Fundadores/ThiagoDuarte.png"
+  fundadorLucivaldo: string = "assets/img/Fundadores/LucivaldoQueiroz.jpeg"
 }

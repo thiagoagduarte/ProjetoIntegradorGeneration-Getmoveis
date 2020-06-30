@@ -2,6 +2,8 @@ package org.generation.getMoveis.controller;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.generation.getMoveis.model.Produto;
 import org.generation.getMoveis.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,9 +63,10 @@ public class ProdutoController {
 		repository.deleteById(codigoDoProduto);
 	}
 	
+	@Transactional
 	@DeleteMapping("/deletar/carrinho/{carrinho}")
-	public void deleteCarrinho(@PathVariable String carrinho) {
-		repository.deleteAllByCarrinhoContainingIgnoreCase(carrinho);
+	public void deleteCarrinho(@PathVariable String carrinho){
+		repository.deleteByCarrinho(carrinho);
 	}
 	
 }

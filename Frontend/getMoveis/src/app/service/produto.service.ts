@@ -36,8 +36,8 @@ export class ProdutoService {
     return this.http.delete(`http://localhost:8080/produtos/${codigoDoProduto}`)
   }
 
-  deleteByCarrinho(carrinho: string) {
-    return this.http.delete(`http://localhost:8080/deletar/carrinho/${carrinho}`)
+  deleteCarrinho(carrinho: string) {
+    return this.http.delete(`http://localhost:8080/produtos/deletar/carrinho/${carrinho}`)
   }
 
 }
