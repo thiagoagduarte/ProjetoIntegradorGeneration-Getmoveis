@@ -344,7 +344,6 @@
       "id": 46
     },
     {
-<<<<<<< HEAD
       "endereco": "Rua Augusta",
       "numero": "123",
       "complemento": "Cobertura Plaza",
@@ -355,18 +354,6 @@
       "endereco": "Av. Paulista",
       "numero": "1234",
       "complemento": "ap1 - BL2",
-=======
-      "endereco": "sasa",
-      "numero": "sasa",
-      "complemento": "sas",
-      "formaPagamento": "boleto",
-      "id": 47
-    },
-    {
-      "endereco": "Rua Parapuã",
-      "numero": "51",
-      "complemento": "",
->>>>>>> 7b343251753709c12af9fc42ba9dfd1416397171
       "formaPagamento": "boleto",
       "id": 48
     }
