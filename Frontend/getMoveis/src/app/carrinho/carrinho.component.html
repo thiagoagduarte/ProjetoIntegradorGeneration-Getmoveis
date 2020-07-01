@@ -5,7 +5,7 @@
 
 
       <div *ngIf='getTotal() == 0'>
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger mb-5" role="alert">
           Ainda não há produtos no seu carrinho!
         </div>
       </div>
@@ -59,23 +59,24 @@
 
       <div class="form-row">
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <!-- teste ternário verifica qual classe css vai ser aplicada -->
           <input type="text"
             class="form-control {{ enderecoEstadoPrimitivo ? '' : (enderecoValido ? 'is-valid' : 'is-invalid') }} "
-            placeholder="Endereço" autocomplete="off" minlength="5" required [value]="endereco" #inputEndereco
-            (input)="atualizaEndereco(inputEndereco.value)">
-          <div class="invalid-feedback">Endereço inválido</div>
+            placeholder="Informe o seu CEP (Apenas números)" autocomplete="off" minlength="8" required
+            [value]="endereco" #inputEndereco (input)="atualizaEndereco(inputEndereco.value)">
+          <div class="invalid-feedback">Necessário 8 dígitos (Apenas números)</div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <input type="text"
+            class="form-control {{ numeroEstadoPrimitivo ? '' : (numeroValido ? 'is-valid' : 'is-invalid') }}"
+            placeholder="Informe o seu endereço completo (Nome e número)" autocomplete="off" minlength="5" required
+            [value]="numero" #inputNumero (input)="atualizaNumero(inputNumero.value)">
+          <div class="invalid-feedback">Necessário no mínimo 5 caracteres (Letras ou números)</div>
         </div>
 
         <div class="form-group col-md-2">
-          <input type="text"
-            class="form-control {{ numeroEstadoPrimitivo ? '' : (numeroValido ? 'is-valid' : 'is-invalid') }}"
-            placeholder="Número" autocomplete="off" minlength="1" required [value]="numero" #inputNumero
-            (input)="atualizaNumero(inputNumero.value)">
-        </div>
-
-        <div class="form-group col-md-4">
           <input type="text" class="form-control {{ complementoValido ? 'is-valid' : '' }}" placeholder="Complemento"
             autocomplete="off" [value]="complemento" #inputComplemento
             (input)="atualizaComplemento(inputComplemento.value)">

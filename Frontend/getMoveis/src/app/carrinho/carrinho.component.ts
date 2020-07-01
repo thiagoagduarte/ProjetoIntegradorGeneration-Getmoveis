@@ -64,7 +64,7 @@ export class CarrinhoComponent implements OnInit {
     this.pesquisarPorCarrinho()
     let token = localStorage.getItem('token');
     if (token == null) {
-      alert('Login necessário');
+      localStorage.setItem('erroacessocarrinho', "sim")
       this.router.navigate(['/home'])
     }
     let tipo = localStorage.getItem('tipo');
@@ -118,7 +118,7 @@ export class CarrinhoComponent implements OnInit {
 
     this.enderecoEstadoPrimitivo = false
 
-    if (this.endereco.length > 3) {
+    if (this.endereco.length > 7 && (/^\d+$/.test(this.endereco))) {
       this.enderecoValido = true
     } else {
       this.enderecoValido = false
@@ -131,7 +131,7 @@ export class CarrinhoComponent implements OnInit {
 
     this.numeroEstadoPrimitivo = false
 
-    if (this.numero.length > 0) {
+    if (this.numero.length > 4) {
       this.numeroValido = true
     } else {
       this.numeroValido = false

@@ -5,7 +5,7 @@
 .embed {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 72.5%;
 }
 
 .embed iframe {
@@ -19,3 +19,20 @@
     width: 500px;
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width:1920.98px) {
+    .telapequena{
+        margin-top: 100px;
+    }
+}
+
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        -moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+>>>>>>> b92725c423b235e7ce390faaa98c988e86ca0df4

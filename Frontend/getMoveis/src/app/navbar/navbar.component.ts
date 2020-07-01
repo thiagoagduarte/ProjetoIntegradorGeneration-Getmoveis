@@ -22,13 +22,24 @@ export class NavbarComponent implements OnInit {
 
   nome: string
 
+  produtos: string
+
+  login: boolean = false;
+
+  errologin: boolean = false;
+
+  erroacessocarrinho: string = localStorage.getItem("erroacessocarrinho");
+
+  adicaocarrinho: string = localStorage.getItem("adicaocarrinho");
+
   usuario: string = localStorage.getItem('usuario');
 
   listaProdutos: Produto[]
 
   constructor(public authService: AuthService, private produtoService: ProdutoService, public router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.produtos = localStorage.getItem('produtos');
   }
 
   pesquisarPorNome() {
@@ -43,17 +54,9 @@ export class NavbarComponent implements OnInit {
       localStorage.setItem('token', this.userLogin.token);
       localStorage.setItem('usuario', this.userLogin.usuario);
       localStorage.setItem('tipo', this.userLogin.tipo);
-      this.router.navigate(['home']);
-      location.assign('/home');
-      alert('Você está logado');
-      // alert(`Usuario: ${this.userLogin.usuario}`);
-      // alert(`Senha: ${this.userLogin.senha}`);
-      // alert(`Tipo: ${this.userLogin.tipo}`);
+      this.login = true;
     }, err => {
-      alert('Houve um erro ao logar, verifique o usuário e a senha');
-      // alert(`Usuario: ${this.userLogin.usuario}`);
-      // alert(`Senha: ${this.userLogin.senha}`);
-      // alert(`Tipo: ${this.userLogin.tipo}`);
+      this.errologin = true;
     });
   }
 
@@ -89,6 +92,26 @@ export class NavbarComponent implements OnInit {
 
   buscaTodos() {
     localStorage.setItem('nome', "a");
+    location.assign('/produtos');
+  }
+
+  ReloadLogin() {
+    location.assign('/home');
+  }
+
+  ReloadErroAcessoCarrinho() {
+    localStorage.removeItem('erroacessocarrinho');
+    location.assign('/home');
+  }
+
+  VerificacaoAcessoCarrinho() {
+    if (localStorage.getItem('usuario') == null) {
+      this.erroacessocarrinho = "sim";
+    }
+  }
+
+  ReloadProdutoAdicionadoAoCarrinho() {
+    localStorage.removeItem('adicaocarrinho');
     location.assign('/produtos');
   }
 }

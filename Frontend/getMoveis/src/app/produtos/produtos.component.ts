@@ -30,6 +30,8 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit() {
 
+
+    localStorage.setItem('produtos', "sim");
     this.pesquisarPorNome();
 
     localStorage.setItem('nome', "a");
@@ -48,6 +50,7 @@ export class ProdutosComponent implements OnInit {
     this.produtoService.GetByNome(this.nome).subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
     })
+    localStorage.setItem('produtos', "nao");
   }
 
   buscaCadeiras() {
@@ -82,7 +85,8 @@ export class ProdutosComponent implements OnInit {
       this.produto = resp
 
     })
-    alert('Produto adicionado ao carrinho')
+    localStorage.setItem('adicaocarrinho', "sim")
+    location.href = "/produtos"
   }
 
   getTotal() {

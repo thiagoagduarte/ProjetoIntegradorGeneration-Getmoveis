@@ -344,18 +344,25 @@
       "id": 46
     },
     {
-      "endereco": "sasa",
-      "numero": "sasa",
-      "complemento": "sas",
-      "formaPagamento": "boleto",
+      "endereco": "Rua Augusta",
+      "numero": "123",
+      "complemento": "Cobertura Plaza",
+      "formaPagamento": "debito",
       "id": 47
     },
     {
-      "endereco": "Rua Parapuã",
-      "numero": "51",
-      "complemento": "",
+      "endereco": "Av. Paulista",
+      "numero": "1234",
+      "complemento": "ap1 - BL2",
       "formaPagamento": "boleto",
       "id": 48
+    },
+    {
+      "endereco": "02831000",
+      "numero": "Rua Top",
+      "complemento": "shakda",
+      "formaPagamento": "boleto",
+      "id": 49
     }
   ]
 }
