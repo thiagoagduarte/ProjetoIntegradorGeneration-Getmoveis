@@ -49,14 +49,14 @@ a{
 
 .comprar{
 	background-color: transparent;
-	color: #434444;
+	color: #72482c;
 	border-radius: 0;
-	border: 1px solid #434444;
+	border: 1px solid #72482c;
 	width: 100%;
 	margin-top: 20px;
 }
 .comprar:hover{
-	background-color: #434444;
+	background-color: #72482c;
 	color: #fff;
 }
 
@@ -86,5 +86,5 @@ a{
 	position: fixed;
 	width: 100%;
 	margin-top: 21px;
-	z-index: 1030;
+	z-index: 16;
 }
