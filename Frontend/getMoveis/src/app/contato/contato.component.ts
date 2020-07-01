@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {  faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {  faUser} from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent implements OnInit {
+
+  @ViewChild ('formulario') public formulario: NgForm
 
   faEnvelope = faEnvelope
   faUser = faUser
@@ -23,4 +26,8 @@ export class ContatoComponent implements OnInit {
     window.scroll(0, 0)
   }
 
+  public ConfirmarEnvio(formulario: NgForm): void {
+    console.log(this.formulario)
+    
+  }
 }

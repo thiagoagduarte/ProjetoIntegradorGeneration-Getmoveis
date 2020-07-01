@@ -7,31 +7,18 @@
                 <hr>
             </div>
         </div>
+        <!-- NavBar Categoria -->
+        <div class="d-flex justify-content-around">
+            <form class="form-inline navbar-light bg-light p-0 menu-vertical flex-wrap">
+                <span class="col btn btn-outline-dark" style="border: none;">Todos</span>
+                <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaCadeiras()'>Cadeiras</span>
+                <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaMesas()'>Mesas</span>
+                <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaPoltronas()'>Poltronas</span>
+                <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaSofas()'>Sofa</span>
+            </form>
+        </div>
         <div class="row justify-content-center">
             <!-- Produto  -->
-            <div class="col-10 col-md-3 ">
-                <div class="ordernar">
-                    <h3 class="mt-2 text-center">Categorias</h3>
-                    <h5 class="text-center mt-3">Produtos</h5>
-                    <div class="d-flex justify-content-center align-items">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a (click)='buscaCadeiras()'>Cadeiras</a>
-                            </li>
-                            <li>
-                                <a (click)='buscaMesas()'>Mesas</a>
-                            </li>
-                            <li>
-                                <a (click)='buscaPoltronas()'>Poltronas</a>
-                            </li>
-                            <li>
-                                <a (click)='buscaSofas()'>Sofás</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
             <div class="col-md-9 d-flex flex-wrap justify-content-center">
                 <div *ngIf='getTotal() == 0'>
                     <div class="alert alert-danger" role="alert">
