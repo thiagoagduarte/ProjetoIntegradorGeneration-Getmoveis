@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
 
 @Component({
   selector: 'app-sobrenos',
@@ -7,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobrenosComponent implements OnInit {
 
+  faLinkedinIn = faLinkedinIn
+  faGithub = faGithub
+
+
   constructor() { }
 
   ngOnInit(): void {
     window.scroll(0, 0)
+
+    localStorage.setItem('pagprodutos', "nao");
   }
 
   sobrenosM: string = "assets/img/Sobrenos/MVV/missao.png"

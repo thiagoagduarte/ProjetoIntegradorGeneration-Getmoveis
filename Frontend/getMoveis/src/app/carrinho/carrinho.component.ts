@@ -76,6 +76,7 @@ export class CarrinhoComponent implements OnInit {
       this.alerta = true
     }
 
+    localStorage.setItem('pagprodutos', "nao");
   }
 
   getTotal() {

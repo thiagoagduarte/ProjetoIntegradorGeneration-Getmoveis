@@ -11,6 +11,8 @@ export class FAQComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0)
+
+    localStorage.setItem('pagprodutos', "nao");
   }
 
 }

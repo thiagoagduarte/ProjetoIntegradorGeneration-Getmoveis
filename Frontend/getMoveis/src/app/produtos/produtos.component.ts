@@ -18,6 +18,8 @@ export class ProdutosComponent implements OnInit {
 
   valortotal: number
 
+  adicaocarrinho: boolean = false;
+
   usuario: string = localStorage.getItem('usuario')
 
   nome: string = localStorage.getItem('nome')
@@ -30,11 +32,10 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit() {
 
-
-    localStorage.setItem('produtos', "sim");
     this.pesquisarPorNome();
 
     localStorage.setItem('nome', "a");
+    localStorage.setItem('pagprodutos', "sim");
     // if (localStorage.getItem('totalcarrinho') == null) {
     //   localStorage.setItem('totalcarrinho', "0")
     // }
@@ -73,6 +74,11 @@ export class ProdutosComponent implements OnInit {
     location.assign('/produtos');
   }
 
+  buscaTodos() {
+    localStorage.setItem('nome', "a");
+    location.assign('/produtos');
+  }
+
   findByCodigoDoProduto(codigoDoProduto: number) {
     this.produtoService.GetById(codigoDoProduto).subscribe((resp: Produto) => {
       this.produto = resp
@@ -85,8 +91,7 @@ export class ProdutosComponent implements OnInit {
       this.produto = resp
 
     })
-    localStorage.setItem('adicaocarrinho', "sim")
-    location.href = "/produtos"
+    this.adicaocarrinho = true
   }
 
   getTotal() {
@@ -105,6 +110,10 @@ export class ProdutosComponent implements OnInit {
     localStorage.setItem('editarProduto', this.codigoDoProdutoString)
     location.assign('/cadastrodeprodutos')
     window.scroll(0, 0);
+  }
+
+  ReloadAdicionarCarrinho() {
+    this.adicaocarrinho = false;
   }
 
 }

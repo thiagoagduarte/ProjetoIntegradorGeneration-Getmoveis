@@ -58,4 +58,14 @@ export class AuthService {
     return ok;
   }
 
+  btnProdutos() {
+    let ok = true;
+    let pagprodutos = localStorage.getItem('pagprodutos');
+
+    if (pagprodutos == "sim") {
+      ok = false;
+    }
+    return ok;
+  }
+
 }

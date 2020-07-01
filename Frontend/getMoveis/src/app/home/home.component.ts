@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    localStorage.setItem('pagprodutos', "nao");
   }
 
   cadeiras: string = "assets/img/home/items/cadeiras.png"

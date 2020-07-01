@@ -13,6 +13,10 @@ export class CadastroEUsuariosComponent implements OnInit {
 
   seta: string = "assets/img/Cadastro/Seta.png"
 
+  cadastrook: boolean = false;
+
+  cadastroerro: boolean = false;
+
   usuario: Usuario = new Usuario
   senha: string;
 
@@ -21,7 +25,7 @@ export class CadastroEUsuariosComponent implements OnInit {
   ngOnInit() {
 
     window.scroll(0, 0)
-
+    localStorage.setItem('pagprodutos', "nao");
   }
 
   conferirSenha(event: any) {
@@ -33,10 +37,10 @@ export class CadastroEUsuariosComponent implements OnInit {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
         this.router.navigate(['/home']);
-        alert('Usuário cadastrado com sucesso!');
+        this.cadastrook = true;
       });
     } else {
-      alert('As senhas não estão iguais.');
+      this.cadastroerro = true;
     }
 
   }

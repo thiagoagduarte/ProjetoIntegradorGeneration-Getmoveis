@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {  faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {  faUser} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { NgForm } from '@angular/forms';
@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ContatoComponent implements OnInit {
 
-  @ViewChild ('formulario') public formulario: NgForm
+  @ViewChild('formulario') public formulario: NgForm
 
   faEnvelope = faEnvelope
   faUser = faUser
@@ -24,10 +24,12 @@ export class ContatoComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0)
+
+    localStorage.setItem('pagprodutos', "nao");
   }
 
   public ConfirmarEnvio(formulario: NgForm): void {
     console.log(this.formulario)
-    
+
   }
 }

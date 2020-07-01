@@ -32,6 +32,8 @@ export class NavbarComponent implements OnInit {
 
   adicaocarrinho: string = localStorage.getItem("adicaocarrinho");
 
+  pagprodutos: string = localStorage.getItem("pagprodutos");
+
   usuario: string = localStorage.getItem('usuario');
 
   listaProdutos: Produto[]
@@ -110,10 +112,7 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  ReloadProdutoAdicionadoAoCarrinho() {
-    localStorage.removeItem('adicaocarrinho');
-    location.assign('/produtos');
-  }
+
 }
 
 

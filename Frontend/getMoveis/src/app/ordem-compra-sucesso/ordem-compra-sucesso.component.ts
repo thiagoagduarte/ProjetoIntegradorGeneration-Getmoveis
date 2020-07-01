@@ -23,6 +23,8 @@ export class OrdemCompraSucessoComponent implements OnInit {
 
   ngOnInit() {
     this.pesquisarPorCarrinho()
+
+    localStorage.setItem('pagprodutos', "nao");
   }
 
   pesquisarPorCarrinho() {
