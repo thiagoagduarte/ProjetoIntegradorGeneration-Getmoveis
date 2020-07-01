@@ -1,7 +1,7 @@
 <div class="container">
 
 
-  <section class="my-5">
+  <form class="my-5" novalidate #formulario="ngForm" (ngSubmit)="(formulario)">
 
     <h2 class="h1-responsive font-weight-bold text-center mx-auto py-5"></h2>
     <!-- <h2 class="h1-responsive font-weight-bold text-center mx-auto pt-2 pb-5">Fale com a Getmóveis!</h2> -->
@@ -21,32 +21,36 @@
             <p>Preencha o formulário Abaixo:</p>
             <!-- Corpo do Formulário -->
             <div class="form-group">
-              <label for="#">Nome</label>
-              <input type="name" class="form-control" id="nome" placeholder="Insira seu nome" required autofocus>
-
+              <label>Nome</label>
+              <input class="form-control" #inputnome="ngModel" name="nome" minlength="3" required ngModel placeholder="Insira seu nome">
+              <small *ngIf="inputnome.valid && inputnome.touched" class="form-text text-success">ok</small>
+              <small *ngIf="!inputnome.valid && inputnome.touched" class="form-text text-danger">Nome inválido</small>
             </div>
             <div class="form-group">
               <label for="#">E-mail</label>
-              <input type="email" class="form-control" id="email" placeholder="nome@example.com" required>
-
+              <input class="form-control" #inputemail="ngModel" name="email"  minlength="9" required ngModel placeholder="nome@example.com">
+              <small *ngIf="inputemail.valid && inputemail.touched" class="form-text text-success">ok</small>
+              <small *ngIf="!inputemail.valid && inputemail.touched" class="form-text text-danger">Email invalido</small>
             </div>
             <div class="form-group">
               <label for="#">Assunto</label>
-              <select class="form-control" id="opcao" required>
-                <option value="1" disabled selected>Escolha sua opção</option>
-                <option value="2">Quero Doar</option>
-                <option value="3">Quero reformar</option>
-                <option value="4">Sugestões</option>
-                <option value="5">Duvidas na compra</option>
-                <option value="6">Outras informações</option>
+              <select class="form-control"  #selectOpcao="ngModel" name="opcao" ngModel required>
+                <option value="">Escolha sua opção</option>
+                <option value="1">Quero Doar um móvel</option>
+                <option value="2">Quero reformar meu móvel</option>
+                <option value="3">Sugestões</option>
+                <option value="4">Duvidas na compra</option>
+                <option value="5">Outras informações</option>
               </select>
-
+              <small *ngIf="selectOpcao.valid && selectOpcao.touched" class="form-text text-success">ok</small>
+              <small *ngIf="!selectOpcao.valid && selectOpcao.touched" class="form-text text-danger">Opção Inválida</small>
             </div>
             <div class="md-form">
               <label for="form-text">Mensagem</label>
               <i class="fas fa-pencil-alt prefix grey-text"></i>
-              <textarea class="form-control" id="message" rows="3" placeholder="Como podemos ajudar?"></textarea>
-
+              <textarea class="form-control" name="mensagem" ngModel #inputMensagem="ngModel" minlength="20" maxlength="150" placeholder="Como podemos ajudar?" required></textarea>
+              <small *ngIf="inputMensagem.valid && inputMensagem.touched" class="form-text text-success">ok</small>
+              <small *ngIf="!inputMensagem.valid && inputMensagem.touched" class="form-text text-danger">Mensagem inválida</small>
             </div>
             <div class="text-center mt-4">
               <button class="btn btn-light btn-outline-dark" type="submit" name="sbt" value="Enviar"
@@ -86,8 +90,8 @@
             <a>
               <fa-icon [icon]="faEnvelope" class="faEnvelope fa-2x"></fa-icon>
             </a>
-            <p>doacaogetmoveis@gmail.com</p>
-            <p class="mb-0">vendagetmoveis@gmail.com</p>
+            <p>getmoveis6@gmail.com</p>
+            <p class="mb-0">getmoveis6@gmail.com</p>
           </div>
         </div>
 
@@ -97,7 +101,7 @@
     </div>
 
 
-  </section>
+  </form>
 
 
 
