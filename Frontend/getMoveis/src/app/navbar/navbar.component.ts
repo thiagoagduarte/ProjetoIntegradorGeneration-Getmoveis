@@ -22,13 +22,16 @@ export class NavbarComponent implements OnInit {
 
   nome: string
 
+  produtos: string
+
   usuario: string = localStorage.getItem('usuario');
 
   listaProdutos: Produto[]
 
   constructor(public authService: AuthService, private produtoService: ProdutoService, public router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.produtos = localStorage.getItem('produtos');
   }
 
   pesquisarPorNome() {
