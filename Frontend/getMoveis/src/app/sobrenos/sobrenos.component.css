@@ -21,3 +21,12 @@
         margin-top: 100px;
     }
 }
+
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        -moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
