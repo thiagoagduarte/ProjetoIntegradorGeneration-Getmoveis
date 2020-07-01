@@ -19,7 +19,7 @@
                 </a>
             </div>
             <h5 class="text-center">{{produto.nome}}</h5>
-            <h5 class="text-center">{{produto.valor}}</h5>
+            <h5 class="text-center">{{produto.valor | currency: 'BRL': true }}</h5>
 
         </div>
         <div class="col-md-8">
@@ -77,7 +77,7 @@
                     </a>
                 </div>
                 <h5 class="text-center">{{produto.nome}}</h5>
-                <h5 class="text-center">Preço: R$ {{produto.valor}}</h5>
+                <h5 class="text-center">{{produto.valor | currency: 'BRL': true }}</h5>
                 <a class="btn comprar text-center" (click)="editarByCodigoDoProduto(produto.codigoDoProduto)">EDITAR</a>
                 <button type="button" class="btn text-center deletar"
                     (click)="deletar(produto.codigoDoProduto)">REMOVER</button>
