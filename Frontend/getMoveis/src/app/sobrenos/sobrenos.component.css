@@ -15,9 +15,6 @@
     border: none;
 }
 
-
-@media (max-width:1920.98px) {
-    .telapequena{
-        margin-top: 100px;
-    }
+.tamanhoModal{
+    width: 500px;
 }

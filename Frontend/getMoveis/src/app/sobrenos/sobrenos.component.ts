@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
+import { faGithub} from '@fortawesome/free-brands-svg-icons'
+
 
 @Component({
   selector: 'app-sobrenos',
@@ -6,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sobrenos.component.css']
 })
 export class SobrenosComponent implements OnInit {
+
+  faLinkedinIn = faLinkedinIn
+  faGithub = faGithub
+
 
   constructor() { }
 
