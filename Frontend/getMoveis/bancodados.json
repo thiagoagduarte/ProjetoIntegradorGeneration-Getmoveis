@@ -342,6 +342,20 @@
       "complemento": "sas",
       "formaPagamento": "boleto",
       "id": 46
+    },
+    {
+      "endereco": "Rua Augusta",
+      "numero": "123",
+      "complemento": "Cobertura Plaza",
+      "formaPagamento": "debito",
+      "id": 47
+    },
+    {
+      "endereco": "Av. Paulista",
+      "numero": "1234",
+      "complemento": "ap1 - BL2",
+      "formaPagamento": "boleto",
+      "id": 48
     }
   ]
 }
