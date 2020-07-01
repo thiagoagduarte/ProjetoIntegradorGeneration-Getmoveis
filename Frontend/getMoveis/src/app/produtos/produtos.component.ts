@@ -85,7 +85,8 @@ export class ProdutosComponent implements OnInit {
       this.produto = resp
 
     })
-    alert('Produto adicionado ao carrinho')
+    localStorage.setItem('adicaocarrinho', "sim")
+    location.href = "/produtos"
   }
 
   getTotal() {
