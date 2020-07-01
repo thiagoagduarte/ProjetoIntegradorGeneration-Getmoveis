@@ -1,4 +1,14 @@
 <body>
+    <div class="d-flex justify-content-around">
+        <form class="form-inline navbar-light bg-light horizontal">
+            <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaCadeiras()'>Cadeiras</span>
+            <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaMesas()'>Mesas</span>
+            <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaPoltronas()'>Poltronas</span>
+            <span class="col btn btn-outline-dark" style="border: none;"(click)='buscaSofas()'>Sofa</span>
+            <span class="col btn btn-outline-dark" style="border: none;">Todos</span>
+        </form>
+    </div>
+
     <div class="container my-5">
         <div class="row mb-5 justify-content-center">
             <div class="col-md-3"></div>
@@ -6,16 +16,6 @@
                 <h1 class="text-center">NOSSOS PRODUTOS</h1>
                 <hr>
             </div>
-        </div>
-        <!-- NavBar Categoria -->
-        <div class="d-flex justify-content-around">
-            <form class="form-inline navbar-light bg-light p-0 menu-vertical flex-wrap" style="z-index: 16;">
-                <span class="col btn btn-outline-dark" style="border: none;">Todos</span>
-                <span class="col btn btn-outline-dark" style="border: none;" (click)='buscaCadeiras()'>Cadeiras</span>
-                <span class="col btn btn-outline-dark" style="border: none;" (click)='buscaMesas()'>Mesas</span>
-                <span class="col btn btn-outline-dark" style="border: none;" (click)='buscaPoltronas()'>Poltronas</span>
-                <span class="col btn btn-outline-dark" style="border: none;" (click)='buscaSofas()'>Sofa</span>
-            </form>
         </div>
         <div class="row justify-content-center">
             <!-- Produto  -->
