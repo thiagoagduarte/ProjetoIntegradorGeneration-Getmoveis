@@ -36,13 +36,22 @@ export class CadastroEUsuariosComponent implements OnInit {
     if (this.senha === this.usuario.senha) {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        this.router.navigate(['/home']);
         this.cadastrook = true;
+      }, err => {
+        this.cadastroerro = true;
       });
     } else {
       this.cadastroerro = true;
     }
 
+  }
+
+  ReloadCadastro() {
+    location.reload();
+  }
+
+  ErroCadastro() {
+    this.cadastroerro = false;
   }
 
 

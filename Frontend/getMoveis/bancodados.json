@@ -398,6 +398,20 @@
       "complemento": "",
       "formaPagamento": "boleto",
       "id": 54
+    },
+    {
+      "endereco": "02831000",
+      "numero": "PAULISTA 1794",
+      "complemento": "CONJ 73",
+      "formaPagamento": "credito",
+      "id": 55
+    },
+    {
+      "endereco": "02831000",
+      "numero": "paulista",
+      "complemento": "1749",
+      "formaPagamento": "boleto",
+      "id": 56
     }
   ]
 }

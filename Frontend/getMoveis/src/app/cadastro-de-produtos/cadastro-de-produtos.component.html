@@ -38,7 +38,17 @@
                 <input type="number" id="nome" class="form-control" placeholder="Digite o Preço"
                     [(ngModel)]="produto.valor">
             </div>
-
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">INFORMAÇÕES</label>
+                <input type="text" id="nome" class="form-control"
+                    placeholder="Digite as principais informações sobre o produto (até 4 palavras)"
+                    [(ngModel)]="produto.modelo">
+            </div>
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">DESCRIÇÃO</label>
+                <textarea type="number" id="nome" class="form-control" placeholder="Digite a descrição do produto"
+                    [(ngModel)]="produto.descricaoProduto"></textarea>
+            </div>
             <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-get w-25" (click)="salvar()">SALVAR</button>
             </div>
@@ -96,7 +106,8 @@
                                 </div>
                                 <div class="col-md-6 ml-auto">
                                     <h5>{{produto.nome}}</h5>
-                                    <p class="mt-3"><strong>Categoria: </strong>{{produto.categoria}}.</p>
+                                    <p class="mt-3"><strong>Valor: </strong>{{produto.valor | currency: 'BRL': true }}
+                                    </p>
                                     <p><strong>Descrição:</strong> {{produto.descricaoProduto}}</p>
                                 </div>
                                 <div class="col-2 offset-10 mt-2 ">
