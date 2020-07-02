@@ -13,6 +13,8 @@ export class OrdemCompraSucessoComponent implements OnInit {
 
   produto: Produto = new Produto
 
+  comprasucesso: boolean = false
+
   valortotal: number
 
   carrinho: string = localStorage.getItem('usuario')
@@ -37,7 +39,7 @@ export class OrdemCompraSucessoComponent implements OnInit {
     this.produtoService.deleteCarrinho(this.carrinho).subscribe(() => {
 
     })
-    alert(`Obrigado por comprar com a GETMóveis!`)
+    this.comprasucesso = true;
   }
 
   getTotal() {

@@ -36,8 +36,8 @@
               </td>
               <td><strong>{{produto.valor | currency: 'BRL': true }}</strong></td>
               <td>
-                <button type="button" class="btn btn-link p-4 mt-2" (click)="Remover(produto)">
-                  <fa-icon [icon]="faTimesCircle"></fa-icon>
+                <button type="button" class="btn btn-link align-top p-0 ml-4" (click)="Remover(produto)">
+                  <fa-icon [icon]="faTimesCircle" style="color: red;"></fa-icon>
                 </button>
             </tr>
           </tbody>
@@ -106,8 +106,7 @@
 
       <hr />
       <div *ngIf='getTotal() !== 0'>
-        <button type="button" class="btn btn-primary btn-lg" [disabled]="formEstado"
-          (click)="confirmarCompra()">Confirmar
+        <button type="button" class="btn btn-get btn-lg" [disabled]="formEstado" (click)="confirmarCompra()">Confirmar
           pedido</button></div>
     </form>
   </div>
