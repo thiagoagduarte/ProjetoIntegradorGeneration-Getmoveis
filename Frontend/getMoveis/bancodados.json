@@ -419,6 +419,13 @@
       "complemento": "Apto. 76 Bl. B",
       "formaPagamento": "debito",
       "id": 57
+    },
+    {
+      "endereco": "1111111111",
+      "numero": "sasas",
+      "complemento": "sasa",
+      "formaPagamento": "boleto",
+      "id": 58
     }
   ]
 }
