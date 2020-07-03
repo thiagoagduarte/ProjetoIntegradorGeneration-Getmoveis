@@ -46,4 +46,9 @@ export class HomeComponent implements OnInit {
     location.assign('/produtos');
   }
 
+  buscaTodos() {
+    localStorage.setItem('nome', "a");
+    location.assign('/produtos');
+  }
+
 }

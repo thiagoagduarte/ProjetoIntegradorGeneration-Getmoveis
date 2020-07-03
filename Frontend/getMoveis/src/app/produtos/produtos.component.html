@@ -13,112 +13,151 @@
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 Produto adicionado ao seu carrinho!
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                    (click)='ReloadAdicionarCarrinho()'>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </form>
-    </div>
-    <div class="d-flex justify-content-center mt-5" *ngIf='adicaocarrinhosemlogin'>
-        <form class="form-inline horizontalalert justify-content-center" style="z-index: 3000">
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Faça o login para adicionar produtos ao carrinho!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                    (click)='ReloadAdicionarCarrinhoSemLogin()'>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </form>
-    </div>
-
-
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-3"></div>
-            <div class="col-12 col-md-1 mb-1 justify-content-center">
-                <h1 class="text-center ajustar">NOSSOS PRODUTOS</h1>
-                <hr>
-            </div>
+                (click)='ReloadAdicionarCarrinho()'>
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-        <div class="row justify-content-center">
-            <!-- Produto  -->
-            <div class="col-md-9 d-flex flex-wrap justify-content-center">
-                <div *ngIf='getTotal() == 0'>
-                    <div class="alert alert-danger text-center" role="alert">
-                        No momento estamos sem produtos para essa busca
-                    </div>
+    </form>
+</div>
+<div class="d-flex justify-content-center mt-5" *ngIf='adicaocarrinhosemlogin'>
+    <form class="form-inline horizontalalert justify-content-center" style="z-index: 3000">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Faça o login para adicionar produtos ao carrinho!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+            (click)='ReloadAdicionarCarrinhoSemLogin()'>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</form>
+</div>
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-3"></div>
+        <div class="col-12 col-md-1 mb-1 justify-content-center">
+            <h1 class="text-center ajustar">NOSSOS PRODUTOS</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <!-- Produto  -->
+        <div class="col-md-9 d-flex flex-wrap justify-content-center">
+            <div *ngIf='getTotal() == 0'>
+                <div class="alert alert-danger text-center" role="alert">
+                    No momento estamos sem produtos para essa busca
                 </div>
-                <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid" *ngFor="let produto of listaProdutos">
-                    <div class="imagem">
-                        <a>
-                            <img src="{{produto.imagem}}" class="w-100">
-                            <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                                <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">Detalhes
-                                </div>
+            </div>
+            <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid" *ngFor="let produto of listaProdutos">
+                <div class="imagem">
+                    <a>
+                        <img src="{{produto.imagem}}" class="w-100">
+                        <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                            <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">Detalhes
                             </div>
-                        </a>
-                    </div>
-                    <h5 class="text-center">{{produto.nome}}</h5>
-                    <h5 class="text-center">{{ produto.valor | currency: 'BRL': true }}</h5>
-                    <div *ngIf='authService.btnLogoutFuncionario()'>
-                        <a class="btn comprar text-center" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
-                            AO CARRINHO</a>
+                        </div>
+                    </a>
+                </div>
+                <h5 class="text-center">{{produto.nome}}</h5>
+                <h5 class="text-center">{{ produto.valor | currency: 'BRL': true }}</h5>
+                <div *ngIf='authService.btnLogoutFuncionario()'>
+                    <a class="btn comprar text-center" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
+                        AO CARRINHO</a>
                     </div>
                     <div *ngIf='authService.btnLoginFuncionario()'>
                         <a class="btn comprar text-center" (click)='EditarProduto(produto.codigoDoProduto)'>
                             EDITAR PRODUTO
                         </a>
                         <!-- <div class="btn btn-outline-dark mt-2" id="navbarDropdown" role="button"
-                                (click)='CadastroEAlteracaoDeProdutos()'>Admin</div> -->
-
-
+                            (click)='CadastroEAlteracaoDeProdutos()'>Admin</div> -->
+                            
+                            
+                        </div>
+                        
                     </div>
-
                 </div>
-            </div>
-
-            <!-- Modal ver detalhes -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                
+                <!-- Modal ver detalhes -->
+                
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog tamanhoModal">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel"><u>{{produto.nome}}</u></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                         <div class="modal-body">
-                            <div class="container-fluid">
+                            <div class="container">
                                 <div class="row">
-                                    <div class="offset-10 mb-3 ml-auto justify-content-center">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Fechar</button>
+                                    <div class="col-md-4 ml-auto"><img src="{{produto.imagem}}" class="w-100"></div>
+                                        <div class="col-md-8 mt-2 ml-auto">
+                                            <p><strong>Descrição: </strong>{{produto.descricaoProduto}}</p>
+                                            <p><strong>Valor:
+                                            </strong>{{produto.valor | currency: 'BRL': true }}</p>
+                                            <a class="col-md-12 ml-auto btn comprar" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
+                                                AO CARRINHO</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-
-                                    <div class="col-6"><img src="{{produto.imagem}}" class="w-100">
-                                    </div>
-                                    <div class="col-md-6 ml-auto">
-                                        <h5>{{produto.nome}}</h5>
-                                        <p class="mt-3"><strong>Valor:
-                                            </strong>{{produto.valor | currency: 'BRL': true }}
-                                        </p>
-                                        <p><strong>Descrição:</strong> {{produto.descricaoProduto}}</p>
-                                        <a class="btn comprar" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
+                                    <!-- <div class="col-md-2 ml-auto">
+                                        <a class="col-md-2 ml-auto btn comprar" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
                                             AO CARRINHO</a>
-                                    </div>
-
-
-
+                                    </div> -->
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- Modal ver detalhes
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="offset-10 mb-3 ml-auto justify-content-center">
+                                                <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Fechar</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            
+                                            <div class="col-6"><img src="{{produto.imagem}}" class="w-100">
+                                            </div>
+                                            <div class="col-md-6 ml-auto">
+                                                <h5>{{produto.nome}}</h5>
+                                                <p class="mt-3"><strong>Valor:
+                                                </strong>{{produto.valor | currency: 'BRL': true }}
+                                            </p>
+                                            <p><strong>Descrição:</strong> {{produto.descricaoProduto}}</p>
+                                            <a class="btn comprar" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
+                                                AO CARRINHO</a>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div> -->
+                    
                 </div>
+                
+                
+                
+                
             </div>
-
-        </div>
-
-
-
-
-    </div>
-</body>
+        </body>
