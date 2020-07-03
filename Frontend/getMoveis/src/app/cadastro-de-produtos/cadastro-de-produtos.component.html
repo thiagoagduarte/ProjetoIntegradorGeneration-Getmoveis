@@ -41,7 +41,7 @@
             <div class="form-group">
                 <label for="titulo" class="text-monospace">INFORMAÇÕES</label>
                 <input type="text" id="nome" class="form-control"
-                    placeholder="Digite as principais informações sobre o produto (até 4 palavras)"
+                    placeholder="Digite as principais informações sobre o produto (breve descrição)"
                     [(ngModel)]="produto.modelo">
             </div>
             <div class="form-group">
@@ -51,7 +51,10 @@
             </div>
             <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-get w-25" (click)="salvar()">SALVAR</button>
+                <button type="button" class="ml-3 btn btn-outline-danger w-25"
+                    (click)="deletar(produto.codigoDoProduto)">REMOVER</button>
             </div>
+
         </div>
     </div>
 

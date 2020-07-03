@@ -46,7 +46,6 @@ export class NavbarComponent implements OnInit {
 
   pesquisarPorNome() {
     localStorage.setItem('nome', this.nome);
-    this.router.navigate(['/produtos']);
     location.assign('/produtos');
   }
 
