@@ -40,6 +40,7 @@ export class OrdemCompraSucessoComponent implements OnInit {
 
     })
     alert("Obrigado por comprar com a GETMóveis!")
+    location.assign('/home')
   }
 
   getTotal() {
