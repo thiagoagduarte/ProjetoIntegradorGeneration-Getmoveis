@@ -93,9 +93,9 @@ export class ProdutosComponent implements OnInit {
         this.produto = resp
 
       })
-      this.adicaocarrinho = true
+      alert("Produto adicionado ao seu carrinho!")
     } else {
-      this.adicaocarrinhosemlogin = true
+      alert("Faça o login para adicionar produtos ao carrinho!")
     }
   }
 
@@ -117,9 +117,9 @@ export class ProdutosComponent implements OnInit {
     window.scroll(0, 0);
   }
 
-  ReloadAdicionarCarrinho() {
-    this.adicaocarrinho = false;
-  }
+  // ReloadAdicionarCarrinho() {
+  //   this.adicaocarrinho = false;
+  // }
 
   ReloadAdicionarCarrinhoSemLogin() {
     this.adicaocarrinho = false;

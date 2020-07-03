@@ -36,23 +36,26 @@ export class CadastroEUsuariosComponent implements OnInit {
     if (this.senha === this.usuario.senha) {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        this.cadastrook = true;
+        alert("Usuário cadastrado com sucesso!")
+        this.router.navigate(['/home'])
       }, err => {
-        this.cadastroerro = true;
+        alert("Erro ao cadastrar, verifique se os dados estão corretos!")
       });
     } else {
-      this.cadastroerro = true;
+      alert('Erro ao cadastrar, as senhas não estão iguais')
     }
 
   }
 
-  ReloadCadastro() {
-    location.reload();
-  }
+  // Alerts-bootstrap
 
-  ErroCadastro() {
-    this.cadastroerro = false;
-  }
+  // ReloadCadastro() {
+  //   location.reload();
+  // }
+
+  // ErroCadastro() {
+  //   this.cadastroerro = false;
+  // }
 
 
 
