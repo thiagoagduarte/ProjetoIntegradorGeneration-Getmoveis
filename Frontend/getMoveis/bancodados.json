@@ -398,6 +398,34 @@
       "complemento": "",
       "formaPagamento": "boleto",
       "id": 54
+    },
+    {
+      "endereco": "03362050",
+      "numero": "Rua Aracê",
+      "complemento": "Vila Formosa",
+      "formaPagamento": "debito",
+      "id": 55
+    },
+    {
+      "endereco": "03362050",
+      "numero": "Rua Aracê ",
+      "complemento": "Vila Formosa ",
+      "formaPagamento": "debito",
+      "id": 56
+    },
+    {
+      "endereco": "03362050",
+      "numero": "Rua Aracê",
+      "complemento": "Vila Formosa",
+      "formaPagamento": "boleto",
+      "id": 57
+    },
+    {
+      "endereco": "03362050",
+      "numero": "Rua Aracê ",
+      "complemento": "Vila Formosa ",
+      "formaPagamento": "debito",
+      "id": 58
     }
   ]
 }
