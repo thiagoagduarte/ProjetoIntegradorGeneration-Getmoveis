@@ -77,6 +77,7 @@ export class CarrinhoComponent implements OnInit {
     }
 
     localStorage.setItem('pagprodutos', "nao");
+    window.scroll(0, 0)
   }
 
   getTotal() {

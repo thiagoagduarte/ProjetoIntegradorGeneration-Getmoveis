@@ -24,8 +24,8 @@ export class OrdemCompraSucessoComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
     this.pesquisarPorCarrinho()
-
     localStorage.setItem('pagprodutos', "nao");
   }
 
@@ -39,8 +39,8 @@ export class OrdemCompraSucessoComponent implements OnInit {
     this.produtoService.deleteCarrinho(this.carrinho).subscribe(() => {
 
     })
-    window.scroll(0, 0);
-    this.comprasucesso = true;
+    alert("Obrigado por comprar com a GETMóveis!")
+    location.assign('/home')
   }
 
   getTotal() {

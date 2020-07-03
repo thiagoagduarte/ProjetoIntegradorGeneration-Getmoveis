@@ -35,6 +35,6 @@ export class ContatoComponent implements OnInit {
 
   EnviarFormulario() {
     alert('Formulário enviado!')
-    this.router.navigate(['/home'])
+    location.assign('/contato')
   }
 }

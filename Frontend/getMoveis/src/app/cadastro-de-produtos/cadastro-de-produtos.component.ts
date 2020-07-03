@@ -25,7 +25,7 @@ export class CadastroDeProdutosComponent implements OnInit {
     let tipo = localStorage.getItem('tipo');
     let codigoDoProduto = parseInt(localStorage.getItem('editarProduto'))
 
-    if (tipo == null) {
+    if (tipo === "null") {
       alert('área exclusiva para funcionários');
       this.router.navigate(['/home']);
     }
