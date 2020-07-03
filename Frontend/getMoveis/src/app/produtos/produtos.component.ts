@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
-import { Usuario } from '../model/Usuario';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -19,6 +18,8 @@ export class ProdutosComponent implements OnInit {
   valortotal: number
 
   adicaocarrinho: boolean = false;
+
+  adicaocarrinhosemlogin: boolean = false;
 
   usuario: string = localStorage.getItem('usuario')
 
@@ -86,12 +87,16 @@ export class ProdutosComponent implements OnInit {
   }
 
   AdicionarAoCarrinho(produto: Produto) {
-    produto.carrinho = localStorage.getItem('usuario')
-    this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
-      this.produto = resp
+    if (localStorage.getItem('usuario') !== null) {
+      produto.carrinho = localStorage.getItem('usuario')
+      this.produtoService.putProduto(produto).subscribe((resp: Produto) => {
+        this.produto = resp
 
-    })
-    this.adicaocarrinho = true
+      })
+      alert("Produto adicionado ao seu carrinho!")
+    } else {
+      alert("Faça o login para adicionar produtos ao carrinho!")
+    }
   }
 
   getTotal() {
@@ -112,7 +117,11 @@ export class ProdutosComponent implements OnInit {
     window.scroll(0, 0);
   }
 
-  ReloadAdicionarCarrinho() {
+  // ReloadAdicionarCarrinho() {
+  //   this.adicaocarrinho = false;
+  // }
+
+  ReloadAdicionarCarrinhoSemLogin() {
     this.adicaocarrinho = false;
   }
 

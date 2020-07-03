@@ -21,6 +21,7 @@ export class CadastroDeProdutosComponent implements OnInit {
   constructor(public router: Router, private produtoService: ProdutoService) { }
 
   ngOnInit() {
+    localStorage.setItem('pagprodutos', "nao");
     let tipo = localStorage.getItem('tipo');
     let codigoDoProduto = parseInt(localStorage.getItem('editarProduto'))
 

@@ -400,6 +400,7 @@
       "id": 54
     },
     {
+<<<<<<< HEAD
       "endereco": "03362050",
       "numero": "Rua Aracê",
       "complemento": "Vila Formosa",
@@ -426,6 +427,20 @@
       "complemento": "Vila Formosa ",
       "formaPagamento": "debito",
       "id": 58
+=======
+      "endereco": "02831000",
+      "numero": "PAULISTA 1794",
+      "complemento": "CONJ 73",
+      "formaPagamento": "credito",
+      "id": 55
+    },
+    {
+      "endereco": "02831000",
+      "numero": "paulista",
+      "complemento": "1749",
+      "formaPagamento": "boleto",
+      "id": 56
+>>>>>>> 077aac1f55581d87e25623f4e1970c85661b2241
     }
   ]
 }

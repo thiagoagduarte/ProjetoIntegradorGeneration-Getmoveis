@@ -64,7 +64,7 @@ export class CarrinhoComponent implements OnInit {
     this.pesquisarPorCarrinho()
     let token = localStorage.getItem('token');
     if (token == null) {
-      localStorage.setItem('erroacessocarrinho', "sim")
+      alert("Faça o login para acessar a opção carrinho")
       this.router.navigate(['/home'])
     }
     let tipo = localStorage.getItem('tipo');
