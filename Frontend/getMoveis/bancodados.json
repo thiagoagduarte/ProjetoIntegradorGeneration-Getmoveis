@@ -412,6 +412,13 @@
       "complemento": "1749",
       "formaPagamento": "boleto",
       "id": 56
+    },
+    {
+      "endereco": "02831000",
+      "numero": "Rua Parapuã, 51",
+      "complemento": "Apto. 76 Bl. B",
+      "formaPagamento": "debito",
+      "id": 57
     }
   ]
 }

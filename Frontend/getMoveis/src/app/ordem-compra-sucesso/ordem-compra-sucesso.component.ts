@@ -24,8 +24,8 @@ export class OrdemCompraSucessoComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
     this.pesquisarPorCarrinho()
-
     localStorage.setItem('pagprodutos', "nao");
   }
 

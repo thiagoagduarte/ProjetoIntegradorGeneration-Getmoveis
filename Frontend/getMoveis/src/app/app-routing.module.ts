@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'editar/:id', component: UsuarioEditarComponent },
   { path: 'carrinho', component: CarrinhoComponent },
   { path: 'cadastrodeprodutos', component: CadastroDeProdutosComponent },
+  { path: '**', redirectTo: 'home' },
   // { path: 'ordemcompra', component: OrdemCompraSucessoComponent }
 ];
 
