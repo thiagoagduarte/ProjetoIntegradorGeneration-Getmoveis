@@ -426,6 +426,34 @@
       "complemento": "sasa",
       "formaPagamento": "boleto",
       "id": 58
+    },
+    {
+      "endereco": "11111111111",
+      "numero": "aaaaa",
+      "complemento": "a",
+      "formaPagamento": "boleto",
+      "id": 59
+    },
+    {
+      "endereco": "11111111",
+      "numero": "aaaaa",
+      "complemento": "",
+      "formaPagamento": "debito",
+      "id": 60
+    },
+    {
+      "endereco": "11111111",
+      "numero": "aaaaa",
+      "complemento": "",
+      "formaPagamento": "credito",
+      "id": 61
+    },
+    {
+      "endereco": "11111111",
+      "numero": "aaaaaaa",
+      "complemento": "",
+      "formaPagamento": "boleto",
+      "id": 62
     }
   ]
 }
