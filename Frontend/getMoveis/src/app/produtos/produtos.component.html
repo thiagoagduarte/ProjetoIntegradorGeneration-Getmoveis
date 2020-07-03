@@ -58,8 +58,8 @@
                             </div>
                         </a>
                     </div>
-                    <h5 class="text-center">{{produto.nome}}</h5>
-                    <h5 class="text-center">{{ produto.valor | currency: 'BRL': true }}</h5>
+                    <h6 class="text-center">{{produto.nome}}</h6>
+                    <h6 class="text-center">{{ produto.valor | currency: 'BRL': true }}</h6>
                     <div *ngIf='authService.btnLogoutFuncionario()'>
                         <a class="btn comprar text-center" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
                             AO CARRINHO</a>
