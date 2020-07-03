@@ -36,6 +36,7 @@
     top: 20px;
     position: absolute;
     background: #E8EEFF;
+    padding-bottom: 5px;
 }
 
 .btn-link.collapsed:after{
