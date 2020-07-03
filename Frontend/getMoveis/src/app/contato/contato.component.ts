@@ -4,7 +4,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contato',
@@ -20,7 +20,7 @@ export class ContatoComponent implements OnInit {
   faMapMarkerAlt = faMapMarkerAlt
   faPhone = faPhone
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     window.scroll(0, 0)
@@ -31,5 +31,10 @@ export class ContatoComponent implements OnInit {
   public ConfirmarEnvio(formulario: NgForm): void {
     console.log(this.formulario)
 
+  }
+
+  EnviarFormulario() {
+    alert('Formulário enviado!')
+    this.router.navigate(['/home'])
   }
 }

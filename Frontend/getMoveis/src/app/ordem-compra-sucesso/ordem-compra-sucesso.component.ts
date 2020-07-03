@@ -39,6 +39,7 @@ export class OrdemCompraSucessoComponent implements OnInit {
     this.produtoService.deleteCarrinho(this.carrinho).subscribe(() => {
 
     })
+    window.scroll(0, 0);
     this.comprasucesso = true;
   }
 

@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   carrossel1: string = "assets/img/home/carrossel/carrossel1.png"
   carrossel2: string = "assets/img/home/carrossel/carrossel2.png"
 
-  // Busca de produtos
+  //Busca de produtos
 
   buscaCadeiras() {
     localStorage.setItem('nome', "cadeira");
@@ -43,6 +43,11 @@ export class HomeComponent implements OnInit {
 
   buscaSofas() {
     localStorage.setItem('nome', "sofa");
+    location.assign('/produtos');
+  }
+
+  buscaTodos() {
+    localStorage.setItem('nome', "a");
     location.assign('/produtos');
   }
 

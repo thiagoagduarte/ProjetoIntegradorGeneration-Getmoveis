@@ -24,13 +24,13 @@ export class NavbarComponent implements OnInit {
 
   produtos: string
 
-  login: boolean = false;
+  // login: boolean = false;
 
-  errologin: boolean = false;
+  // errologin: boolean = false;
 
-  erroacessocarrinho: string = localStorage.getItem("erroacessocarrinho");
+  // erroacessocarrinho: string = localStorage.getItem("erroacessocarrinho");
 
-  adicaocarrinho: string = localStorage.getItem("adicaocarrinho");
+  // adicaocarrinho: string = localStorage.getItem("adicaocarrinho");
 
   pagprodutos: string = localStorage.getItem("pagprodutos");
 
@@ -46,7 +46,6 @@ export class NavbarComponent implements OnInit {
 
   pesquisarPorNome() {
     localStorage.setItem('nome', this.nome);
-    this.router.navigate(['/produtos']);
     location.assign('/produtos');
   }
 
@@ -56,9 +55,12 @@ export class NavbarComponent implements OnInit {
       localStorage.setItem('token', this.userLogin.token);
       localStorage.setItem('usuario', this.userLogin.usuario);
       localStorage.setItem('tipo', this.userLogin.tipo);
-      this.login = true;
+      // this.login = true;
+      alert("Você está logado!")
+      location.assign('/home')
     }, err => {
-      this.errologin = true;
+      // this.errologin = true;
+      alert("Erro ao logar! Verifique os dados inseridos!")
     });
   }
 
@@ -106,11 +108,11 @@ export class NavbarComponent implements OnInit {
     location.assign('/home');
   }
 
-  VerificacaoAcessoCarrinho() {
-    if (localStorage.getItem('usuario') == null) {
-      this.erroacessocarrinho = "sim";
-    }
-  }
+  // VerificacaoAcessoCarrinho() {
+  //   if (localStorage.getItem('usuario') == null) {
+  //     this.erroacessocarrinho = "sim";
+  //   }
+  // }
 
 
 }

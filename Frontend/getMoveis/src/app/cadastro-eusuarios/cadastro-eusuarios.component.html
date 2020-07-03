@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
         <div class="position-absolute" style="z-index: 3000" *ngIf='cadastrook'>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 Usuário cadastrado com sucesso!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)='ReloadCadastro()'>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -12,20 +12,20 @@
     <div class="d-flex justify-content-center">
         <div class="position-absolute" style="z-index: 3000" *ngIf='cadastroerro'>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                As senhas não estão iguais!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                Erro ao cadastrar, verifique se os dados estão corretos e se as senhas estão iguais
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)='ErroCadastro()'>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="row">
         <div class="col-md-10 offset-md-1">
             <div class="row">
                 <div class="col-md-5 register-left">
                     <img [src]=seta alt="Seta">
                     <h3>Junte-se a Getmóveis</h3>
-                    <button type="button" class="btn btn-primary">Sobre Nós</button>
+                    <button [routerLink]="['/sobrenos']" type="button" class="btn btn-primary">Sobre Nós</button>
                 </div>
                 <div class="col-md-7 register-right">
                     <h2>Cadastre-se</h2>
