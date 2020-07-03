@@ -21,7 +21,8 @@
 }
 
 .register-left .btn-primary:hover{
-    background: #000;
+    background: #4f2c14;
+    color: #FFF;
 }
 
 .register-left img{
