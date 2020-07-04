@@ -496,6 +496,13 @@
       "complemento": "",
       "formaPagamento": "debito",
       "id": 68
+    },
+    {
+      "endereco": "15105000",
+      "numero": "Rua maestro antonio amato, 53",
+      "complemento": "casa",
+      "formaPagamento": "credito",
+      "id": 69
     }
   ]
 }
