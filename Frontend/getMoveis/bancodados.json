@@ -454,6 +454,48 @@
       "complemento": "",
       "formaPagamento": "boleto",
       "id": 62
+    },
+    {
+      "endereco": "02831000",
+      "numero": "AAAA  51",
+      "complemento": "aaa",
+      "formaPagamento": "credito",
+      "id": 63
+    },
+    {
+      "endereco": "02831000",
+      "numero": "AAAA  51",
+      "complemento": "aaa",
+      "formaPagamento": "credito",
+      "id": 64
+    },
+    {
+      "endereco": "11111111",
+      "numero": "aaa11",
+      "complemento": "aaa",
+      "formaPagamento": "boleto",
+      "id": 65
+    },
+    {
+      "endereco": "11790000",
+      "numero": "Rua Maria Ribeiro Resterich",
+      "complemento": "Perto do bananal",
+      "formaPagamento": "credito",
+      "id": 66
+    },
+    {
+      "endereco": "111111111",
+      "numero": "aaaaaaaaa",
+      "complemento": "",
+      "formaPagamento": "boleto",
+      "id": 67
+    },
+    {
+      "endereco": "111111111",
+      "numero": "aaaaaaaa",
+      "complemento": "",
+      "formaPagamento": "debito",
+      "id": 68
     }
   ]
 }

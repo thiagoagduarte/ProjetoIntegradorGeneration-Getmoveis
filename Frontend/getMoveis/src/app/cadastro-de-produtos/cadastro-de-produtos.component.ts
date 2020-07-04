@@ -71,6 +71,7 @@ export class CadastroDeProdutosComponent implements OnInit {
     this.produtoService.delete(codigoDoProduto).subscribe(() => {
 
     })
+    alert('O produto foi removido!');
     location.assign('/cadastrodeprodutos');
   }
 
