@@ -23,7 +23,7 @@ public class Usuario {
 	private long codigoCpf;
 	
 	@NotNull
-	@Size(min =5, max = 100)
+	@Size(min =2, max = 100)
 	private String nomeCliente;
 
 	private String usuario;

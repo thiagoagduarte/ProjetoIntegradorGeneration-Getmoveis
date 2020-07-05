@@ -72,9 +72,14 @@
                                         <p><strong>Descrição: </strong>{{produto.descricaoProduto}}</p>
                                         <p><strong>Valor:
                                             </strong>{{produto.valor | currency: 'BRL': true }}</p>
-                                        <a class="col-md-12 ml-auto btn comprar"
-                                            (click)="AdicionarAoCarrinho(produto)">ADICIONAR
-                                            AO CARRINHO</a>
+                                        <div *ngIf='authService.btnLogoutFuncionario()'>
+                                            <a class="col-md-12 ml-auto btn comprar"
+                                                (click)="AdicionarAoCarrinho(produto)">ADICIONAR
+                                                AO CARRINHO</a></div>
+                                        <div *ngIf='authService.btnLoginFuncionario()'>
+                                            <a class="col-md-12 ml-auto btn comprar"
+                                                (click)='EditarProduto(produto.codigoDoProduto)'>EDITAR PRODUTO</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
