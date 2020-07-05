@@ -454,6 +454,27 @@
       "complemento": "",
       "formaPagamento": "boleto",
       "id": 62
+    },
+    {
+      "endereco": "03362050",
+      "numero": "Rua Aracê ",
+      "complemento": "Vila Formosa ",
+      "formaPagamento": "debito",
+      "id": 63
+    },
+    {
+      "endereco": "00000000",
+      "numero": "Rua ABC, 123",
+      "complemento": "Casas",
+      "formaPagamento": "debito",
+      "id": 64
+    },
+    {
+      "endereco": "03362050",
+      "numero": "Rua Aracê ",
+      "complemento": "Vila Formosa ",
+      "formaPagamento": "boleto",
+      "id": 65
     }
   ]
 }
