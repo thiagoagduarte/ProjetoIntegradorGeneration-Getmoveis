@@ -8,8 +8,8 @@
             <span class="col btn btn-outline-get" style="border: none;" (click)='buscaTodos()'>Todos</span>
         </form>
     </div>
-
-
+    
+    
     <div class="container my-5 ajustar">
         <div class="row justify-content-center">
             <div class="col-md-3"></div>
@@ -41,20 +41,20 @@
                     <div *ngIf='authService.btnLogoutFuncionario()'>
                         <a class="btn comprar text-center" (click)="AdicionarAoCarrinho(produto)">ADICIONAR
                             AO CARRINHO</a>
+                        </div>
+                        <div *ngIf='authService.btnLoginFuncionario()'>
+                            <a class="btn comprar text-center" (click)='EditarProduto(produto.codigoDoProduto)'>
+                                EDITAR PRODUTO
+                            </a>
+                            
+                        </div>
+                        
                     </div>
-                    <div *ngIf='authService.btnLoginFuncionario()'>
-                        <a class="btn comprar text-center" (click)='EditarProduto(produto.codigoDoProduto)'>
-                            EDITAR PRODUTO
-                        </a>
-
-                    </div>
-
                 </div>
-            </div>
-
-            <!-- Modal ver detalhes -->
-
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                
+                <!-- Modal ver detalhes -->
+                
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog tamanhoModal">
                     <div class="modal-content">
@@ -71,28 +71,28 @@
                                     <div class="col-md-8 mt-2 ml-auto">
                                         <p><strong>Descrição: </strong>{{produto.descricaoProduto}}</p>
                                         <p><strong>Valor:
-                                            </strong>{{produto.valor | currency: 'BRL': true }}</p>
+                                        </strong>{{produto.valor | currency: 'BRL': true }}</p>
                                         <div *ngIf='authService.btnLogoutFuncionario()'>
                                             <a class="col-md-12 ml-auto btn comprar"
-                                                (click)="AdicionarAoCarrinho(produto)">ADICIONAR
-                                                AO CARRINHO</a></div>
-                                        <div *ngIf='authService.btnLoginFuncionario()'>
-                                            <a class="col-md-12 ml-auto btn comprar"
+                                            (click)="AdicionarAoCarrinho(produto)">ADICIONAR
+                                            AO CARRINHO</a></div>
+                                            <div *ngIf='authService.btnLoginFuncionario()'>
+                                                <a class="col-md-12 ml-auto btn comprar"
                                                 (click)='EditarProduto(produto.codigoDoProduto)'>EDITAR PRODUTO</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
-
                         </div>
                     </div>
                 </div>
+                
             </div>
-
+            
+            
+            
+            
         </div>
-
-
-
-
-    </div>
-</body>
+    </body>

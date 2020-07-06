@@ -1,26 +1,17 @@
 <div class="container">
-  <!-- <div class="d-flex justify-content-center">
-    <div class="position-absolute" style="z-index: 3000" *ngIf='comprasucesso'>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        Obrigado por comprar com a GETMóveis!
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" [routerLink]="['/home']">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
-  </div> -->
+  
   <div class="row" style="margin-top: 50px">
     <div class="col d-flex justify-content-center">
       <h3>Pedido realizado com sucesso!</h3>
     </div>
   </div>
-
+  
   <div class="row" style="margin-top: 50px">
     <div class="col d-flex justify-content-center">
       <p>O número do seu pedido é <b> {{idPedidoCompra}} </b></p>
     </div>
   </div>
-
+  
   <div class="table-responsive-lg">
     <h5>Resumo do Pedido</h5>
     <hr />
@@ -38,36 +29,36 @@
               <img class="media-object thumbnail pull-left" src="{{produto.imagem}}" alt="{{produto.descricaoProduto}}" style="width: 72px; height: 72px;">
               <div class="media-body ml-3">
                 <h4 class="media-heading">{{produto.nome}}</h4>
-                <span><strong>Informações: </strong></span><span>{{produto.modelo}}</span>
+                <span><strong>Informações: </strong></span><span>{{produto.descricaoProduto}}</span>
               </div>
             </div>
           </td>
           <td><strong>{{produto.valor | currency: 'BRL': true }}</strong></td>
           <td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td class="text-right">
-            <h5>Total:</h5>
-          </td>
-          <td class="text-left">
-            <h5><strong>{{ getTotal() | currency: 'BRL': true }}</strong></h5>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 d-flex justify-content-center mt-5">
-
-      <button type="button" class="btn btn-get btn-lg" (click)="FinalizarCompra()">Finalizar
-        compra</button>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="text-right">
+              <h5>Total:</h5>
+            </td>
+            <td class="text-left">
+              <h5><strong>{{ getTotal() | currency: 'BRL': true }}</strong></h5>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="col-md-4"></div>
-
-  </div>
-
-</div>
+    
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 d-flex justify-content-center mt-5">
+        
+        <button type="button" class="btn btn-get btn-lg" (click)="FinalizarCompra()">Finalizar
+          compra</button>
+        </div>
+        <div class="col-md-4"></div>
+        
+      </div>
+      
+    </div>

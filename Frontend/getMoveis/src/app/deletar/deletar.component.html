@@ -1,55 +1,55 @@
 <div class="container">
-
+    
     <div class="row mt-5 mb-5">
-
-
+        
+        
         <div class="col-md-12">
-
+            
             <div>
                 <h3 class="text-center text-monospace">Deletar usuario cadastrado</h3>
-
+                
             </div>
-
+            
             <hr class="mt-5 mb-5">
-
-
-
+            
+            
+            
             <div class="card mb-4">
-
+                
                 <div class="card-header">
-
+                    
                     <h5 class="card-title">{{usuario.nomeCliente}}</h5>
-
+                    
                 </div>
-
+                
                 <div class="card-body">
                     <p class="card-text">EMAIL CLIENTE: {{usuario.email}}</p>
                     <p class="card-text">SENHA CLIENTE: {{usuario.senha}}</p>
                     <p class="card-text">CPF CLIENTE: {{usuario.codigoCpf}}</p>
                 </div>
-
+                
             </div>
-
+            
             <hr class="mt-5 mb-5">
-
+            
             <div class="row">
                 <div class="col-md-12 text-center mb-4">
                     <h5> Tem certeza que deseja apagar esse usuário?</h5>
-
+                    
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
                     <button class="btn btn-outline-info mr-3" (click)="btnSim()">SIM</button>
-
+                    
                     <button class="btn btn-outline-danger" (click)="btnNao()">NÃO</button>
-
+                    
                 </div>
             </div>
-
+            
         </div>
     </div>
-
-
+    
+    
 </div>

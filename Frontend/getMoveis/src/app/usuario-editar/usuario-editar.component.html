@@ -1,33 +1,33 @@
 <div class="container">
-
-
+    
+    
     <div class="col-md-12">
-
+        
         <div>
             <h3 class="text-center text-monospace">Cadastro de Clientes GetMoveis</h3>
-
+            
             <div class="form-group">
                 <label for="nome" class="text-monospace">Alterar Nome:</label>
                 <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome completo"
-                    minlength="3" required size="80">
+                minlength="3" required size="80">
             </div>
-
+            
             <div class="form-group">
                 <label for="email" class="text-monospace"> Alterar E-mail:</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email"
-                    required pattern=".+@mail.com" size="80" required>
+                required pattern=".+@mail.com" size="80" required>
             </div>
-
+            
             <div class="form-group">
                 <label for="password" class="text-monospace">Alterar Senha:</label>
                 <input type="password" id="password" class="form-control" name="password" minlength="8"
-                    placeholder="Digite uma senha com no minimo 8 caracteres" required>
+                placeholder="Digite uma senha com no minimo 8 caracteres" required>
             </div>
-
+            
             <div class="d-flex justify-content-center">
                 <button type="button" class="btn btn-outline-info w-25 mb-2" (click)="salvar()">Salvar Alteração</button>
             </div>
         </div>
     </div>
-
+    
 </div>

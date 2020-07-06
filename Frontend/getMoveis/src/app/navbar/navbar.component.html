@@ -1,126 +1,126 @@
 <div class="container-fluid tamanhoNavBar">
-
+    
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top py-2 box-shadow">
-
+        
         <a routerLink='/home' class="navbar-brand">
             <img src="assets/img/nav/get_home.png" id="logoicon" alt="Logo da GetMóveis: Sofa marrom em fundo preto">
         </a>
-
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir Navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="input-group md-form form-sm form-2 pl-0">
-            <input class="form-control my-0 py-1 red-border" type="text" placeholder="O que você procura?"
-                aria-label="Pesquisar" [(ngModel)]="nome">
-            <div class="input-group-append">
-                <span class="input-group-text red lighten-3 btn btn-outline-primary" id="Pesquisar"
-                    (click)=pesquisarPorNome()>
-                    <fa-icon [icon]="faSearch"></fa-icon>
-                </span>
-            </div>
-        </div>
-
-
-        <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown" style="z-index: 3000;" *ngIf='authService.btnProdutos()'>
-                    <a class="nav-link dropdown-toggle mt-2" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item cortexto" (click)='buscaCadeiras()'>Cadeiras</a>
-                        <a class="dropdown-item cortexto" (click)='buscaMesas()'>Mesas</a>
-                        <a class="dropdown-item cortexto" (click)='buscaPoltronas()'>Poltronas</a>
-                        <a class="dropdown-item cortexto" (click)='buscaSofas()'>Sofás</a>
-                        <a class="dropdown-item cortexto" (click)='buscaTodos()'>Todos</a>
-                    </div>
-                </li>
-                <div *ngIf='authService.btnLogin()'>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mt-2" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrar</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item cortexto" href="" data-toggle="modal" data-target="#login">Login</a>
-                            <a class="dropdown-item cortexto" routerLink='cadastro'>Cadastro</a>
-                        </div>
-                    </li>
-
-                </div>
-                <div *ngIf='authService.btnSair()'>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mt-2" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bem vinde
-                            {{usuario}}!</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item cortexto" (click)='sair()'>Sair</a>
-                        </div>
-                    </li>
-                </div>
-                <div *ngIf='authService.btnLoginFuncionario()'>
-
-                    <div class="btn btn-outline-dark mt-2" id="navbarDropdown" role="button"
-                        (click)='CadastroEAlteracaoDeProdutos()'>Admin</div>
-
-
-                </div>
-                <div *ngIf='authService.btnLogoutFuncionario()'>
-                    <li class="nav-item">
-                        <a class="nav-item btn ml-md-2 mt-2 cortexto" routerLink='carrinho'>
-                            <fa-icon [icon]="faShoppingCart" class="faShoppingCart fa-1x" alt="Carrinho"></fa-icon>
-                        </a>
-                    </li>
-                </div>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Modal Login -->
-
-    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-
-            <div class="modal-content container">
-                <div class="row modal-header">
-                    <h5 class="col-6 mt-3"><strong>Login</strong></h5>
-                </div>
-
-                <div class="modal-body pt-0">
-                    <div>
-                        <div class="mx-4 mb-3">
-                            <a routerLink='home' target="_blank">
-                                <img src="assets/img/nav/get_home.png" style="width: 12rem;" alt="Logo da GetMóveis: Sofa marrom em fundo preto">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <form action="/login" method="POST" id="form-login">
-
-                                <div>
-                                    <input name="userLoginusuario" type="usuario" id="usuario"
-                                        placeholder="Digite o seu usuario" required [(ngModel)]='userLogin.usuario'>
-                                </div>
-
-                                <div>
-                                    <input name="userLoginsenha" type="password" id="password"
-                                        placeholder="Digite a senha" required [(ngModel)]='userLogin.senha'>
-                                </div>
-                                <div>
-                                    <button id="btn-submit" class="btn BotaoEnviar" (click)='entrar()'>Entrar</button>
-                                    <h6 class="p-2">Não tem conta?<br><a href="cadastro">cadastre-se</a></h6>
-
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- FIM MODAL LOGIN -->
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir Navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="input-group md-form form-sm form-2 pl-0">
+        <input class="form-control my-0 py-1 red-border" type="text" placeholder="O que você procura?"
+        aria-label="Pesquisar" [(ngModel)]="nome">
+        <div class="input-group-append">
+            <span class="input-group-text red lighten-3 btn btn-outline-primary" id="Pesquisar"
+            (click)=pesquisarPorNome()>
+            <fa-icon [icon]="faSearch"></fa-icon>
+        </span>
     </div>
+</div>
+
+
+<div class="collapse navbar-collapse" id="menu">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown" style="z-index: 3000;" *ngIf='authService.btnProdutos()'>
+            <a class="nav-link dropdown-toggle mt-2" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item cortexto" (click)='buscaCadeiras()'>Cadeiras</a>
+                <a class="dropdown-item cortexto" (click)='buscaMesas()'>Mesas</a>
+                <a class="dropdown-item cortexto" (click)='buscaPoltronas()'>Poltronas</a>
+                <a class="dropdown-item cortexto" (click)='buscaSofas()'>Sofás</a>
+                <a class="dropdown-item cortexto" (click)='buscaTodos()'>Todos</a>
+            </div>
+        </li>
+        <div *ngIf='authService.btnLogin()'>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mt-2" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrar</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item cortexto" href="" data-toggle="modal" data-target="#login">Login</a>
+                    <a class="dropdown-item cortexto" routerLink='cadastro'>Cadastro</a>
+                </div>
+            </li>
+            
+        </div>
+        <div *ngIf='authService.btnSair()'>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mt-2" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bem vinde
+                {{usuario}}!</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item cortexto" (click)='sair()'>Sair</a>
+                </div>
+            </li>
+        </div>
+        <div *ngIf='authService.btnLoginFuncionario()'>
+            
+            <div class="btn btn-outline-dark mt-2" id="navbarDropdown" role="button"
+            (click)='CadastroEAlteracaoDeProdutos()'>Admin</div>
+            
+            
+        </div>
+        <div *ngIf='authService.btnLogoutFuncionario()'>
+            <li class="nav-item">
+                <a class="nav-item btn ml-md-2 mt-2 cortexto" routerLink='carrinho'>
+                    <fa-icon [icon]="faShoppingCart" class="faShoppingCart fa-1x" alt="Carrinho"></fa-icon>
+                </a>
+            </li>
+        </div>
+    </ul>
+</div>
+</nav>
+
+<!-- Modal Login -->
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    
+    <div class="modal-content container">
+        <div class="row modal-header">
+            <h5 class="col-6 mt-3"><strong>Login</strong></h5>
+        </div>
+        
+        <div class="modal-body pt-0">
+            <div>
+                <div class="mx-4 mb-3">
+                    <a routerLink='home' target="_blank">
+                        <img src="assets/img/nav/get_home.png" style="width: 12rem;" alt="Logo da GetMóveis: Sofa marrom em fundo preto">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <form action="/login" method="POST" id="form-login">
+                        
+                        <div>
+                            <input name="userLoginusuario" type="usuario" id="usuario"
+                            placeholder="Digite o seu usuario" required [(ngModel)]='userLogin.usuario'>
+                        </div>
+                        
+                        <div>
+                            <input name="userLoginsenha" type="password" id="password"
+                            placeholder="Digite a senha" required [(ngModel)]='userLogin.senha'>
+                        </div>
+                        <div>
+                            <button id="btn-submit" class="btn BotaoEnviar" (click)='entrar()'>Entrar</button>
+                            <h6 class="p-2">Não tem conta?<br><a href="cadastro">cadastre-se</a></h6>
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- FIM MODAL LOGIN -->
+</div>
 </div>

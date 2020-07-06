@@ -1,177 +1,83 @@
 <div class="container">
-    <!-- <div class="d-flex justify-content-center">
-        <div class="position-absolute" style="z-index: 3000" *ngIf='cadastrook'>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Usuário cadastrado com sucesso!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)='ReloadCadastro()'>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-center">
-        <div class="position-absolute" style="z-index: 3000" *ngIf='cadastroerro'>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Erro ao cadastrar, verifique se os dados estão corretos e se as senhas estão iguais
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)='ErroCadastro()'>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    </div> -->
     <div class="row">
         <div class="col-md-10 offset-md-1">
             <div class="row">
                 <div class="col-md-5 register-left">
-                    <img [src]=seta alt="Seta" alt="Seta indicando onde clicar para saber sobre a GetMóveis">
+                    <img
+                    [src]="seta"
+                    alt="Seta"
+                    alt="Seta indicando onde clicar para saber sobre a GetMóveis"
+                    />
                     <h3>Junte-se a Getmóveis</h3>
-                    <button [routerLink]="['/sobrenos']" type="button" class="btn btn-primary">Sobre Nós</button>
-                </div>
-                <div class="col-md-7 register-right">
-                    <h2>Cadastre-se</h2>
-                    <form>
-                        <div class="register-form">
-                            <div class="form-group">
-                                <input type="text" name="nomeCliente" placeholder="Digite o seu nome"
-                                    class="form-control" [(ngModel)]='usuario.nomeCliente'>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="usuario" placeholder="Usuario" class="form-control"
-                                    [(ngModel)]='usuario.usuario'>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="E-mail" class="form-control"
-                                    [(ngModel)]='usuario.email'>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="senhafront" placeholder="Senha" class="form-control"
-                                    (input)='conferirSenha($event)' value='{{senha}}'>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="senha" placeholder="Confirme sua Senha"
-                                    class="form-control" [(ngModel)]='usuario.senha'>
-                            </div>
-                            <button type="submit" class="btn btn-primary" (click)='cadastrar()'>Registrar</button>
-                        </div>
-
-                    </form>
-                </div>
+                    <button
+                    [routerLink]="['/sobrenos']"
+                    type="button"
+                    class="btn btn-primary"
+                    >
+                    Sobre Nós
+                </button>
             </div>
-
+            <div class="col-md-7 register-right">
+                <h2>Cadastre-se</h2>
+                <form>
+                    <div class="register-form">
+                        <div class="form-group">
+                            <input
+                            type="text"
+                            name="nomeCliente"
+                            placeholder="Digite o seu nome"
+                            class="form-control"
+                            [(ngModel)]="usuario.nomeCliente"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                            type="text"
+                            name="usuario"
+                            placeholder="Usuario"
+                            class="form-control"
+                            [(ngModel)]="usuario.usuario"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                            type="email"
+                            name="email"
+                            placeholder="E-mail"
+                            class="form-control"
+                            [(ngModel)]="usuario.email"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                            type="password"
+                            name="senhafront"
+                            placeholder="Senha"
+                            class="form-control"
+                            (input)="conferirSenha($event)"
+                            value="{{ senha }}"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                            type="password"
+                            name="senha"
+                            placeholder="Confirme sua Senha"
+                            class="form-control"
+                            [(ngModel)]="usuario.senha"
+                            />
+                        </div>
+                        <button
+                        type="submit"
+                        class="btn btn-primary"
+                        (click)="cadastrar()"
+                        >
+                        Registrar
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-
 </div>
-
-<!-- <div class="container">
-
-    <div class="row mt-5 mb-5">
-
-
-        <div class="col-md-12">
-
-            <div>
-                <h3 class="text-center text-monospace">Cadastre-se na GETMóveis!</h3>
-
-                <div class="form-group">
-                    <label for="nome" class="text-monospace">CPF</label>
-                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome completo"
-                        [(ngModel)]="usuario.codigoCpf" minlength="3" required size="80">
-                </div>
-
-                <div class="form-group">
-                    <label for="nome" class="text-monospace">Nome</label>
-                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome completo"
-                        [(ngModel)]="usuario.nomeCliente" minlength="3" required size="80">
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="text-monospace">E-mail:</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email"
-                        required pattern=".+@mail.com" size="80" required [(ngModel)]="usuario.email">
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="text-monospace">Senha:</label>
-                    <input type="password" id="password" class="form-control" name="password" minlength="8"
-                        placeholder="Digite uma senha com no minimo 8 caracteres" required [(ngModel)]="usuario.senha">
-                </div>
-
-                <div class="form-group">
-                    <label for="password2" class="text-monospace">Confirme a Senha:</label>
-                    <input type="password" id="password2" class="form-control" name="password2" minlength="8"
-                        placeholder="Digite uma senha com no minimo 8 caracteres" required [(ngModel)]="usuario.senha2">
-                </div>
-
-                <div *ngIf='alerta'>
-                    <div class="alert alert-danger" role="alert">
-                        As senhas não conferem.
-                    </div>
-
-                </div>
-
-
-
-                <div class="d-flex justify-content-end mt-5">
-                    <button type="button" class="btn btn-outline-info w-25" (click)="cadastrar()">Cadastrar</button>
-                </div>
-            </div>
-
-            <hr class="mt-5 mb-5">
-
-            <h3 class="text-monospace text-center mb-5">Veja quem já comprou conosco</h3>
-
-            <div *ngIf='deletou'>
-                <div class="alert alert-success" role="alert">
-                    Usuario apagado com sucesso.
-                </div>
-
-            </div>
-
-
-
-            <div class="card mb-4" *ngFor="let usuario of listaUsuarios">
-
-                <div class="card-header">
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5 class="card-title">{{usuario.nomeCliente}}</h5>
-
-                        </div>
-
-                        <div class="col-md-4 d-flex justify-content-end">
-                            <button class="btn btn-outline-info mr-3" 
-                            [routerLink] = "['/editar', user.id]">
-                                Editar
-                            </button>
-
-                            <button class="btn btn-outline-danger"
-                                [routerLink]="['/deletar', usuario.codigoCpf]">Apagar</button>
-
-                        </div>
-
-
-
-
-
-                    </div>
-
-
-
-
-                </div>
-
-                <div class="card-body">
-                     <p class="card-text">EMAIL CLIENTE: {{user.email}}</p>
-                     <p class="card-text">SENHA CLIENTE: {{user.senha}}</p>
-                    <p class="card-text">ID CLIENTE: {{user.id}}</p>
-                </div>
-
-             </div>
-
-        </div>
-    </div>
-
-
-</div> -->
+</div>
+</div>
