@@ -10,7 +10,7 @@
             <h5 class="text-center mb-4 text-monospace">PRÉVIA</h5>
             <div class="imagem">
                 <a>
-                    <img src="{{produto.imagem}}" class="w-100">
+                    <img src="{{produto.imagem}}" class="w-100" alt="{{produto.descricaoProduto}}">
                     <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
                         <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">
                             Detalhes
@@ -81,7 +81,7 @@
                 *ngFor="let produto of listaProdutos">
                 <div class="imagem">
                     <a>
-                        <img src="{{produto.imagem}}" class="img-card w-100">
+                        <img src="{{produto.imagem}}" class="img-card w-100" alt="{{produto.descricaoProduto}}">
                         <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
                             <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">Selecionar e
                                 Ver detalhes

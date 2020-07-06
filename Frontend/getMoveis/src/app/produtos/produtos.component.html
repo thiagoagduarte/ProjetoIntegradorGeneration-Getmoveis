@@ -29,7 +29,7 @@
                 <div class="col-10 col-md-3 mr-3 ml-3 mt-5 p-3 produto-grid" *ngFor="let produto of listaProdutos">
                     <div class="imagem">
                         <a>
-                            <img src="{{produto.imagem}}" class="w-100">
+                            <img src="{{produto.imagem}}" class="w-100" alt="{{produto.descricaoProduto}}">
                             <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
                                 <div class="detalhes" (click)="findByCodigoDoProduto(produto.codigoDoProduto)">Detalhes
                                 </div>
